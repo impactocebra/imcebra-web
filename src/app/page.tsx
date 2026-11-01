@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { 
   Send, 
   MessageCircle, 
@@ -50,14 +51,20 @@ export default function Home() {
       {/* NAVBAR MINIMALISTA */}
       <nav className="fixed top-0 left-0 w-full z-50 bg-[#050505]/85 backdrop-blur-md border-b border-white/10 px-6 py-4">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <div className="flex items-center space-x-3 group cursor-pointer">
-            <span className="text-2xl font-black tracking-tight text-white transition duration-300 group-hover:scale-105 inline-block">
-              Im<span className="text-[#FF007F] inline-block animate-pulse">Cebra</span>
-            </span>
-            <span className="text-xs uppercase tracking-widest text-[#00D2FF] border border-[#00D2FF]/30 px-2 py-0.5 rounded-full bg-[#00D2FF]/5">
+          <Link href="/" className="flex items-center space-x-3 group cursor-pointer">
+            <div className="relative h-10 w-28 sm:w-32">
+              <Image
+                src="/logo_imcebra.png"
+                alt="ImCebra Gráfica Corporativa"
+                fill
+                className="object-contain filter drop-shadow-[0_0_12px_rgba(255,0,127,0.35)] group-hover:scale-105 transition duration-300"
+                priority
+              />
+            </div>
+            <span className="text-[10px] uppercase font-mono tracking-widest text-[#00D2FF] border border-[#00D2FF]/40 px-2 py-0.5 rounded-full bg-[#00D2FF]/10 hidden sm:inline-block">
               SpA
             </span>
-          </div>
+          </Link>
 
           <div className="hidden md:flex items-center space-x-8 text-sm font-medium text-zinc-300">
             <a href="/catalogo" className="hover:text-white transition">Catálogo Completo</a>
@@ -681,12 +688,14 @@ export default function Home() {
         <div className="max-w-7xl mx-auto space-y-16">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-10 text-sm">
             <div className="space-y-4 md:col-span-2">
-              <span className="text-xs uppercase font-mono font-bold tracking-widest bg-black text-[#FFE600] px-3 py-1 rounded-full">
-                Producción Gráfica & Consorcio
-              </span>
-              <h3 className="text-3xl font-black tracking-tight text-neutral-900">
-                ImCebra SpA
-              </h3>
+              <div className="relative h-14 w-44">
+                <Image
+                  src="/logo_imcebra.png"
+                  alt="ImCebra Gráfica Corporativa"
+                  fill
+                  className="object-contain"
+                />
+              </div>
               <p className="max-w-sm text-neutral-800 font-medium leading-relaxed">
                 Comercialización de gráfica corporativa, material POP y proyectos especiales a gran escala en Chile. 30 años conectando marcas con la mejor infraestructura industrial.
               </p>

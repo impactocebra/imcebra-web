@@ -60,8 +60,13 @@ export default function CatalogoPage() {
             <span>Volver a Inicio</span>
           </Link>
 
-          <Link href="/" className="text-xl font-black tracking-tight">
-            Im<span className="text-[#FF007F]">Cebra</span> <span className="text-xs uppercase text-zinc-500 font-mono">Catálogo</span>
+          <Link href="/" className="relative h-9 w-28 block">
+            <Image
+              src="/logo_imcebra.png"
+              alt="ImCebra Gráfica Corporativa"
+              fill
+              className="object-contain"
+            />
           </Link>
 
           <Link
