@@ -717,8 +717,8 @@ export default function Home() {
 
           {/* LOGOTIPO MONUMENTAL DE EXTREMO A EXTREMO ESTILO SAFFRON */}
           <div className="pt-10 border-t border-black/15 flex flex-col items-center">
-            <span className="font-anton text-[16vw] tracking-normal leading-none select-none text-black hover:opacity-85 transition duration-300 uppercase">
-              IMCEBRA
+            <span className="font-anton text-[16vw] tracking-normal leading-none select-none text-black hover:opacity-85 transition duration-300">
+              ImCebra
             </span>
             <div className="w-full flex flex-col sm:flex-row items-center justify-between text-xs font-mono font-bold text-neutral-800 pt-6 border-t border-black/10">
               <span>SANTIAGO DE CHILE • LIMA • BOGOTÁ • MADRID</span>
