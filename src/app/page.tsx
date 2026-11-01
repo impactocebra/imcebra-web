@@ -50,17 +50,17 @@ export default function Home() {
       {/* NAVBAR MINIMALISTA */}
       <nav className="fixed top-0 left-0 w-full z-50 bg-[#050505]/85 backdrop-blur-md border-b border-white/10 px-6 py-4">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <div className="flex items-center space-x-3">
-            <span className="text-2xl font-black tracking-tight text-white">
-              Im<span className="text-[#FF007F]">Cebra</span>
+          <div className="flex items-center space-x-3 group cursor-pointer">
+            <span className="text-2xl font-black tracking-tight text-white transition duration-300 group-hover:scale-105 inline-block">
+              Im<span className="text-[#FF007F] inline-block animate-pulse">Cebra</span>
             </span>
-            <span className="text-xs uppercase tracking-widest text-zinc-400 border border-white/10 px-2 py-0.5 rounded-full">
+            <span className="text-xs uppercase tracking-widest text-[#00D2FF] border border-[#00D2FF]/30 px-2 py-0.5 rounded-full bg-[#00D2FF]/5">
               SpA
             </span>
           </div>
 
           <div className="hidden md:flex items-center space-x-8 text-sm font-medium text-zinc-300">
-            <a href="#catalogo" className="hover:text-white transition">Catálogo Base</a>
+            <a href="/catalogo" className="hover:text-white transition">Catálogo Completo</a>
             <a href="#condiciones" className="hover:text-[#00D2FF] transition">6 Condiciones</a>
             <a href="#propuesta" className="hover:text-white transition">La Red</a>
             <a href="#cotizador" className="hover:text-[#FFE600] transition">Cotizador Zack</a>
@@ -676,43 +676,48 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FOOTER */}
-      <footer id="contacto" className="border-t border-white/10 py-16 px-6 bg-black text-zinc-400 text-xs">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
-          <div className="space-y-4 md:col-span-2">
-            <div className="flex items-center space-x-2">
-              <span className="text-xl font-black text-white">Im<span className="text-[#FF007F]">Cebra</span></span>
-              <span className="text-[10px] text-zinc-500 uppercase tracking-widest">SpA</span>
+      {/* FOOTER AMARILLO GIGANTE EXPANSIVO ESTILO SAFFRON */}
+      <footer id="contacto" className="relative bg-[#FFE600] text-black pt-20 pb-16 px-6 overflow-hidden">
+        <div className="max-w-7xl mx-auto space-y-16">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-10 text-sm">
+            <div className="space-y-4 md:col-span-2">
+              <span className="text-xs uppercase font-mono font-bold tracking-widest bg-black text-[#FFE600] px-3 py-1 rounded-full">
+                Producción Gráfica & Consorcio
+              </span>
+              <h3 className="text-3xl font-black tracking-tight text-neutral-900">
+                ImCebra SpA
+              </h3>
+              <p className="max-w-sm text-neutral-800 font-medium leading-relaxed">
+                Comercialización de gráfica corporativa, material POP y proyectos especiales a gran escala en Chile. 30 años conectando marcas con la mejor infraestructura industrial.
+              </p>
             </div>
-            <p className="max-w-sm text-zinc-400 font-light leading-relaxed">
-              Comercialización y gestión de producción gráfica corporativa en Chile. Conectamos demanda empresarial con capacidades industriales directas.
-            </p>
-            <p className="text-zinc-600">
-              © 2026 ImCebra SpA. Todos los derechos reservados.
-            </p>
+
+            <div className="space-y-2">
+              <p className="font-extrabold uppercase tracking-wider text-xs text-neutral-900">Contacto Directo</p>
+              <p className="font-semibold text-neutral-900">ImpactoCebra@gmail.com</p>
+              <p className="font-semibold text-neutral-900">+56 9 5708 1096</p>
+              <p className="text-neutral-700 text-xs">Santiago • Providencia, Chile</p>
+            </div>
+
+            <div className="space-y-2">
+              <p className="font-extrabold uppercase tracking-wider text-xs text-neutral-900">Navegación</p>
+              <ul className="space-y-1 font-semibold text-neutral-900">
+                <li><a href="/catalogo" className="hover:underline">Ver Catálogo de Productos ↗</a></li>
+                <li><a href="#condiciones" className="hover:underline">Las 6 Condiciones ↗</a></li>
+                <li><a href="#cotizador" className="hover:underline">Cotizador con Zack the Zebra ↗</a></li>
+              </ul>
+            </div>
           </div>
 
-          <div className="space-y-3">
-            <p className="font-bold text-white uppercase tracking-wider text-[11px]">Contacto Comercial</p>
-            <p className="flex items-center space-x-2">
-              <Mail className="w-4 h-4 text-[#FF007F]" />
-              <span>ImpactoCebra@gmail.com</span>
-            </p>
-            <p className="flex items-center space-x-2">
-              <Phone className="w-4 h-4 text-[#00D2FF]" />
-              <span>+56 9 5708 1096</span>
-            </p>
-            <p className="flex items-center space-x-2">
-              <MapPin className="w-4 h-4 text-[#FFE600]" />
-              <span>Providencia, Santiago de Chile</span>
-            </p>
-          </div>
-
-          <div className="space-y-3">
-            <p className="font-bold text-white uppercase tracking-wider text-[11px]">Garantía Operativa</p>
-            <p className="text-zinc-400 leading-relaxed font-light">
-              Todas las órdenes se gestionan bajo contrato de intermediación y anticipo del 50% con emisión de factura electrónica exenta o afecta según corresponda.
-            </p>
+          {/* LOGOTIPO MONUMENTAL DE EXTREMO A EXTREMO ESTILO SAFFRON */}
+          <div className="pt-10 border-t border-black/15 flex flex-col items-center">
+            <span className="text-[14vw] font-black tracking-tighter leading-none select-none text-black hover:opacity-85 transition duration-300">
+              IMCEBRA
+            </span>
+            <div className="w-full flex flex-col sm:flex-row items-center justify-between text-xs font-mono font-bold text-neutral-800 pt-6 border-t border-black/10">
+              <span>SANTIAGO DE CHILE • LIMA • BOGOTÁ • MADRID</span>
+              <span className="mt-2 sm:mt-0">© 2026 IMCEBRA SPA. TODOS LOS DERECHOS RESERVADOS.</span>
+            </div>
           </div>
         </div>
       </footer>
