@@ -687,7 +687,7 @@ export default function Home() {
             <div className="space-y-4 md:col-span-2">
               <div className="relative h-16 w-52 sm:h-20 sm:w-60">
                 <Image
-                  src="/logo_imcebra_hd.png"
+                  src="/logo_imcebra_negro_completo.png"
                   alt="ImCebra Gráfica Corporativa"
                   fill
                   className="object-contain"
@@ -717,9 +717,15 @@ export default function Home() {
 
           {/* LOGOTIPO MONUMENTAL DE EXTREMO A EXTREMO ESTILO SAFFRON */}
           <div className="pt-10 border-t border-black/15 flex flex-col items-center">
-            <span className="font-anton text-[16vw] tracking-normal leading-none select-none text-black hover:opacity-85 transition duration-300">
-              ImCebra
-            </span>
+            <div className="relative w-full max-w-6xl aspect-[995/307] hover:opacity-90 transition duration-300">
+              <Image
+                src="/logo_imcebra_negro_monumental.png"
+                alt="ImCebra Gráfica Corporativa"
+                fill
+                className="object-contain"
+                priority
+              />
+            </div>
             <div className="w-full flex flex-col sm:flex-row items-center justify-between text-xs font-mono font-bold text-neutral-800 pt-6 border-t border-black/10">
               <span>SANTIAGO DE CHILE • LIMA • BOGOTÁ • MADRID</span>
               <span className="mt-2 sm:mt-0">© 2026 IMCEBRA SPA. TODOS LOS DERECHOS RESERVADOS.</span>
