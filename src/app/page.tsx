@@ -41,7 +41,7 @@ export default function Home() {
     e.preventDefault();
     setSubmitted(true);
     // Armar mensaje directo para WhatsApp
-    const msg = `¡Hola ImCebra! Quiero cotizar:%0A%0A*Cliente:* ${formData.nombre} (${formData.empresa})%0A*Tipo:* ${formData.tipo}%0A*Cantidad:* ${formData.cantidad}%0A*Tamaño:* ${formData.tamano}%0A*Colores:* ${formData.colores}%0A*Materiales:* ${formData.materiales || "A convenir"}%0A*Terminación:* ${formData.terminacion}%0A*Comentarios:* ${formData.comentarios || "Sin comentarios"}`;
+    const msg = `¡Hola Zack! Quiero cotizar con ImCebra:%0A%0A*Cliente:* ${formData.nombre} (${formData.empresa})%0A*Tipo:* ${formData.tipo}%0A*Cantidad:* ${formData.cantidad}%0A*Tamaño:* ${formData.tamano}%0A*Colores:* ${formData.colores}%0A*Materiales:* ${formData.materiales || "A convenir"}%0A*Terminación:* ${formData.terminacion}%0A*Comentarios:* ${formData.comentarios || "Sin comentarios"}`;
     window.open(`https://wa.me/56957081096?text=${msg}`, "_blank");
   };
 
@@ -271,14 +271,15 @@ export default function Home() {
       <section id="cotizador" className="py-24 px-6 bg-gradient-to-b from-zinc-950 to-black border-t border-white/10">
         <div className="max-w-4xl mx-auto space-y-10">
           <div className="text-center space-y-3">
-            <span className="text-[#FF007F] text-xs font-bold uppercase tracking-widest">
-              Cotizador Inteligente 24/7
-            </span>
+            <div className="inline-flex items-center space-x-2 border border-[#00D2FF]/40 bg-[#00D2FF]/10 px-3.5 py-1.5 rounded-full text-xs font-semibold text-[#00D2FF]">
+              <Sparkles className="w-3.5 h-3.5" />
+              <span>Asistente Inteligente de Producción: Zack the Zebra</span>
+            </div>
             <h2 className="text-3xl sm:text-5xl font-black">
-              COTIZA TU PROYECTO
+              COTIZA CON ZACK EN VIVO
             </h2>
             <p className="text-zinc-400 text-sm max-w-lg mx-auto">
-              Ingresa los parámetros de tu requerimiento. Nuestro sistema procesa las 6 condiciones para darte el mejor presupuesto del mercado.
+              Ingresa los parámetros de tu requerimiento. Zack procesa las 6 condiciones técnicas y te conecta directo a WhatsApp con tu presupuesto pre-armado.
             </p>
           </div>
 
@@ -442,13 +443,13 @@ export default function Home() {
               type="submit"
               className="w-full bg-gradient-to-r from-[#FF007F] via-[#FF007F] to-[#00D2FF] hover:opacity-95 text-white font-extrabold py-4 px-8 rounded-2xl text-base tracking-wide flex items-center justify-center space-x-3 transition shadow-pink-glow"
             >
-              <span>Enviar Requerimiento y Conectar con Asesor</span>
+              <span>Enviar Requerimiento a Zack en WhatsApp</span>
               <Send className="w-5 h-5" />
             </button>
 
             {submitted && (
               <p className="text-center text-xs text-[#00D2FF] font-medium">
-                ✓ Abriendo WhatsApp con los datos de tu cotización...
+                ✓ Conectando con Zack en WhatsApp con tus 6 condiciones listas...
               </p>
             )}
           </form>
