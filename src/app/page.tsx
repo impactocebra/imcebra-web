@@ -296,6 +296,136 @@ export default function Home() {
         </div>
       </section>
 
+      {/* SECCIÓN ESTILO SAFFRON: BROWSE WORK BY CATEGORY & CASOS INTERACTIVOS */}
+      <section className="py-28 px-6 bg-white text-black">
+        <div className="max-w-7xl mx-auto space-y-16">
+          <div className="text-center max-w-3xl mx-auto space-y-6">
+            <h2 className="text-4xl sm:text-6xl font-black tracking-tight text-neutral-900">
+              Browse work by service
+            </h2>
+            <p className="text-neutral-500 text-base font-light">
+              Explora nuestra capacidad instalada por categoría técnica de producción gráfica corporativa.
+            </p>
+            
+            {/* PILLS ESTILO SAFFRON */}
+            <div className="flex flex-wrap justify-center gap-3 pt-4">
+              {[
+                "Merchandising Corporativo",
+                "Kits de Onboarding",
+                "Packaging & Cajas",
+                "Papelería Fina & Cuadernos",
+                "Gran Formato & Pendones",
+                "Letreros Volumétricos",
+                "Línea Eco-Friendly",
+                "Textil & Uniformes",
+                "Proyectos a Medida"
+              ].map((pill, idx) => (
+                <span
+                  key={idx}
+                  className="px-5 py-2.5 rounded-full border border-neutral-300 text-xs sm:text-sm font-medium hover:border-black hover:bg-black hover:text-white transition duration-200 cursor-pointer shadow-sm"
+                >
+                  {pill}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          {/* DUAL INTERACTIVE GRID (ESTILO EDITORIAL SAFFRON CON ZARA / CASOS) */}
+          <div className="bg-[#0a0a0c] text-white rounded-3xl p-8 sm:p-14 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            {/* COLUMNA IZQUIERDA: IMAGEN CON TARJETA EDITORIAL */}
+            <div className="lg:col-span-5 relative group">
+              <div className="relative aspect-[4/5] rounded-2xl overflow-hidden bg-neutral-900 border border-white/10 shadow-2xl">
+                <Image
+                  src="/cebras_hero.png"
+                  alt="ImCebra Producción de Vanguardia"
+                  fill
+                  className="object-cover group-hover:scale-105 transition duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+                <div className="absolute bottom-6 left-6 right-6 p-4 bg-black/60 backdrop-blur-md rounded-xl border border-white/10">
+                  <span className="text-[10px] uppercase font-mono tracking-widest text-[#FF007F]">
+                    ■ CASE STUDY #01
+                  </span>
+                  <p className="text-sm font-bold text-white mt-1">
+                    Universidad Católica — Kits de Bienvenida Masivos
+                  </p>
+                  <p className="text-xs text-neutral-400 font-light mt-0.5">
+                    Demanda agrupada, bolsas de algodón orgánico y libretas foil.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* COLUMNA DERECHA: LISTA EDITORIAL CON FLECHAS CIRCULARES */}
+            <div className="lg:col-span-7 space-y-8 divide-y divide-white/10">
+              <div className="pt-2 group cursor-pointer">
+                <div className="flex items-center justify-between">
+                  <span className="text-[11px] font-mono uppercase tracking-widest text-neutral-400">
+                    ■ MERCHANDISING | IMPORTACIÓN DIRECTA
+                  </span>
+                  <div className="w-10 h-10 rounded-full bg-white/5 border border-white/15 flex items-center justify-center group-hover:bg-white group-hover:text-black transition">
+                    <ArrowRight className="w-4 h-4 transform -rotate-45 group-hover:rotate-0 transition duration-300" />
+                  </div>
+                </div>
+                <h3 className="text-2xl sm:text-4xl font-extrabold tracking-tight mt-2 text-white group-hover:text-[#00D2FF] transition">
+                  KITS CORPORATIVOS DE ALTA ESCALA
+                </h3>
+                <p className="text-sm text-neutral-400 font-light mt-1 max-w-xl">
+                  Fabricación masiva de botellas térmicas doble pared, libretas de cuero ecológico y estuches personalizados.
+                </p>
+              </div>
+
+              <div className="pt-8 group cursor-pointer">
+                <div className="flex items-center justify-between">
+                  <span className="text-[11px] font-mono uppercase tracking-widest text-neutral-400">
+                    ■ RETAIL & ESPACIOS | PROYECTOS A MEDIDA
+                  </span>
+                  <div className="w-10 h-10 rounded-full bg-white/5 border border-white/15 flex items-center justify-center group-hover:bg-white group-hover:text-black transition">
+                    <ArrowRight className="w-4 h-4 transform -rotate-45 group-hover:rotate-0 transition duration-300" />
+                  </div>
+                </div>
+                <h3 className="text-2xl sm:text-4xl font-extrabold tracking-tight mt-2 text-white group-hover:text-[#FF007F] transition">
+                  LETREROS VOLUMÉTRICOS & BRANDING AMBIENTAL
+                </h3>
+                <p className="text-sm text-neutral-400 font-light mt-1 max-w-xl">
+                  Letreros retroiluminados, acrílicos con corte láser milimétrico y cuadros en gran formato para salas de directorio.
+                </p>
+              </div>
+
+              <div className="pt-8 group cursor-pointer">
+                <div className="flex items-center justify-between">
+                  <span className="text-[11px] font-mono uppercase tracking-widest text-neutral-400">
+                    ■ PAPELERÍA DE LUJO | 6 CONDICIONES TÉCNICAS
+                  </span>
+                  <div className="w-10 h-10 rounded-full bg-white/5 border border-white/15 flex items-center justify-center group-hover:bg-white group-hover:text-black transition">
+                    <ArrowRight className="w-4 h-4 transform -rotate-45 group-hover:rotate-0 transition duration-300" />
+                  </div>
+                </div>
+                <h3 className="text-2xl sm:text-4xl font-extrabold tracking-tight mt-2 text-white group-hover:text-[#FFE600] transition">
+                  PAPELERÍA FINAS CON BARNIZ UV & FOIL
+                </h3>
+                <p className="text-sm text-neutral-400 font-light mt-1 max-w-xl">
+                  Tarjetería en cuatricromía sobre couché 350g, polilaminado mate seda y cuños secos de altísima fidelidad.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* PÍLDORA FLOTANTE INFERIOR ESTILO SAFFRON */}
+      <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50">
+        <a
+          href="#cotizador"
+          className="flex items-center space-x-3 bg-black/90 backdrop-blur-xl border border-white/20 text-white px-6 py-3 rounded-full shadow-2xl hover:border-[#FF007F] transition group"
+        >
+          <span className="w-2 h-2 rounded-full bg-[#00D2FF] animate-pulse" />
+          <span className="text-xs sm:text-sm font-semibold tracking-wide">
+            ¿Tienes un proyecto en mente? <span className="text-[#FF007F] group-hover:underline">Cotiza con Zack ↗</span>
+          </span>
+        </a>
+      </div>
+
       {/* PROPUESTA DE VALOR / EL MODELO DE BROKERAGE */}
       <section id="propuesta" className="py-24 px-6 bg-[#050505]">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
