@@ -60,9 +60,10 @@ export default function Home() {
           </div>
 
           <div className="hidden md:flex items-center space-x-8 text-sm font-medium text-zinc-300">
-            <a href="#propuesta" className="hover:text-white transition">La Red</a>
+            <a href="#catalogo" className="hover:text-white transition">Catálogo Base</a>
             <a href="#condiciones" className="hover:text-[#00D2FF] transition">6 Condiciones</a>
-            <a href="#cotizador" className="hover:text-[#FFE600] transition">Cotizador</a>
+            <a href="#propuesta" className="hover:text-white transition">La Red</a>
+            <a href="#cotizador" className="hover:text-[#FFE600] transition">Cotizador Zack</a>
             <a href="#contacto" className="hover:text-white transition">Contacto</a>
           </div>
 
@@ -156,6 +157,95 @@ export default function Home() {
                 <span className="h-2 w-2 rounded-full bg-[#00D2FF] animate-pulse" />
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CATÁLOGO DE REFERENCIAS / PROVEEDORES */}
+      <section id="catalogo" className="py-20 px-6 bg-zinc-950 border-t border-white/10">
+        <div className="max-w-7xl mx-auto space-y-12">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
+            <div>
+              <span className="text-[#FFE600] text-xs font-bold uppercase tracking-widest">
+                Red Mayorista & Alianzas Industriales
+              </span>
+              <h2 className="text-3xl sm:text-4xl font-black mt-2">
+                LÍNEA DE PRODUCTOS DISPONIBLES
+              </h2>
+              <p className="text-zinc-400 text-sm mt-1 max-w-xl">
+                Acceso a más de 25 millones de unidades bodegadas en Chile a través de los mayores importadores y fábricas asociadas.
+              </p>
+            </div>
+            <a
+              href="#cotizador"
+              className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-wider text-[#FF007F] hover:text-white transition"
+            >
+              <span>Cotizar con tus 6 condiciones</span>
+              <ArrowRight className="w-4 h-4" />
+            </a>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              {
+                nombre: "Botellas Térmicas & Mugs",
+                desc: "Acero inoxidable doble pared, grabado láser o serigrafía full color.",
+                img: "/catalogo/botella_termica.jpg",
+                tag: "Bebidas & Térmicos"
+              },
+              {
+                nombre: "Libretas & Cuadernos Corporativos",
+                desc: "Tapas duras ecológicas, hojas recicladas, cinta separadora y elástico.",
+                img: "/catalogo/libreta_corporativa.jpg",
+                tag: "Escritorio & Oficina"
+              },
+              {
+                nombre: "Bolsas de Algodón & Tote Bags",
+                desc: "Algodón 100% natural, asas reforzadas, impresión serigráfica de alto contraste.",
+                img: "/catalogo/bolsa_algodon.jpg",
+                tag: "Línea Ecológica"
+              },
+              {
+                nombre: "Bolígrafos & Lápices Ejecutivos",
+                desc: "Cuerpo metálico, clip cromado, terminación mate y grabado de precisión.",
+                img: "/catalogo/lapiz_ejecutivo.jpg",
+                tag: "Escritura Fina"
+              }
+            ].map((prod, idx) => (
+              <div 
+                key={idx}
+                className="bg-black/70 border border-white/10 rounded-2xl overflow-hidden hover:border-[#00D2FF]/60 transition group flex flex-col"
+              >
+                <div className="relative aspect-square w-full bg-zinc-900 overflow-hidden">
+                  <Image
+                    src={prod.img}
+                    alt={prod.nombre}
+                    fill
+                    className="object-cover group-hover:scale-105 transition duration-500"
+                  />
+                  <span className="absolute top-3 left-3 bg-black/80 backdrop-blur-md text-[10px] font-bold text-[#00D2FF] uppercase tracking-wider px-2.5 py-1 rounded-full border border-white/10">
+                    {prod.tag}
+                  </span>
+                </div>
+                <div className="p-5 flex-1 flex flex-col justify-between space-y-2">
+                  <div>
+                    <h3 className="font-bold text-base text-white group-hover:text-[#FFE600] transition">
+                      {prod.nombre}
+                    </h3>
+                    <p className="text-xs text-zinc-400 font-light mt-1">
+                      {prod.desc}
+                    </p>
+                  </div>
+                  <a
+                    href="#cotizador"
+                    className="pt-2 text-xs font-semibold text-[#FF007F] inline-flex items-center space-x-1 group-hover:underline"
+                  >
+                    <span>Cotizar en ImCebra</span>
+                    <ArrowRight className="w-3 h-3" />
+                  </a>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
