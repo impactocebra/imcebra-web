@@ -1,26 +1,36 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: #050505;
+  --foreground: #ffffff;
+  --cebra-pink: #FF007F;
+  --cebra-cyan: #00D2FF;
+  --cebra-yellow: #FFE600;
+  --cebra-dark: #0A0A0C;
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom Utilities */
+.text-cebra-pink { color: #FF007F; }
+.bg-cebra-pink { background-color: #FF007F; }
+.border-cebra-pink { border-color: #FF007F; }
+
+.text-cebra-cyan { color: #00D2FF; }
+.bg-cebra-cyan { background-color: #00D2FF; }
+.border-cebra-cyan { border-color: #00D2FF; }
+
+.text-cebra-yellow { color: #FFE600; }
+.bg-cebra-yellow { background-color: #FFE600; }
+
+.shadow-pink-glow {
+  box-shadow: 0 0 25px rgba(255, 0, 127, 0.45);
+}
+.shadow-cyan-glow {
+  box-shadow: 0 0 25px rgba(0, 210, 255, 0.35);
 }
