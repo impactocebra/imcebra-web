@@ -60,9 +60,9 @@ export default function CatalogoPage() {
             <span>Volver a Inicio</span>
           </Link>
 
-          <Link href="/" className="relative h-9 w-28 block">
+          <Link href="/" className="relative h-12 w-36 block">
             <Image
-              src="/logo_imcebra.png"
+              src="/logo_imcebra_hd.png"
               alt="ImCebra Gráfica Corporativa"
               fill
               className="object-contain"

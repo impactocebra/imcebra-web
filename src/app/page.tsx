@@ -51,19 +51,16 @@ export default function Home() {
       {/* NAVBAR MINIMALISTA */}
       <nav className="fixed top-0 left-0 w-full z-50 bg-[#050505]/85 backdrop-blur-md border-b border-white/10 px-6 py-4">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <Link href="/" className="flex items-center space-x-3 group cursor-pointer">
-            <div className="relative h-10 w-28 sm:w-32">
+          <Link href="/" className="flex items-center group cursor-pointer">
+            <div className="relative h-12 w-36 sm:h-14 sm:w-44">
               <Image
-                src="/logo_imcebra.png"
+                src="/logo_imcebra_hd.png"
                 alt="ImCebra Gráfica Corporativa"
                 fill
-                className="object-contain filter drop-shadow-[0_0_12px_rgba(255,0,127,0.35)] group-hover:scale-105 transition duration-300"
+                className="object-contain group-hover:scale-105 transition duration-300"
                 priority
               />
             </div>
-            <span className="text-[10px] uppercase font-mono tracking-widest text-[#00D2FF] border border-[#00D2FF]/40 px-2 py-0.5 rounded-full bg-[#00D2FF]/10 hidden sm:inline-block">
-              SpA
-            </span>
           </Link>
 
           <div className="hidden md:flex items-center space-x-8 text-sm font-medium text-zinc-300">
@@ -688,9 +685,9 @@ export default function Home() {
         <div className="max-w-7xl mx-auto space-y-16">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-10 text-sm">
             <div className="space-y-4 md:col-span-2">
-              <div className="relative h-14 w-44">
+              <div className="relative h-16 w-52 sm:h-20 sm:w-60">
                 <Image
-                  src="/logo_imcebra.png"
+                  src="/logo_imcebra_hd.png"
                   alt="ImCebra Gráfica Corporativa"
                   fill
                   className="object-contain"
