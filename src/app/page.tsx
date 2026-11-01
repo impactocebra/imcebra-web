@@ -700,9 +700,9 @@ export default function Home() {
 
             <div className="space-y-2">
               <p className="font-extrabold uppercase tracking-wider text-xs text-neutral-900">Contacto Directo</p>
-              <p className="font-semibold text-neutral-900">ImpactoCebra@gmail.com</p>
-              <p className="font-semibold text-neutral-900">+56 9 5708 1096</p>
-              <p className="text-neutral-700 text-xs">Santiago • Providencia, Chile</p>
+              <p className="font-semibold text-neutral-900">contacto@imcebra.com</p>
+              <p className="font-semibold text-neutral-900">+56 9 5700 0000</p>
+              <p className="text-neutral-700 text-xs">Av. Providencia 1208 OF 1603. Providencia, Santiago</p>
             </div>
 
             <div className="space-y-2">
