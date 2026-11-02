@@ -22,17 +22,20 @@ import {
 } from "lucide-react";
 
 export default function Home() {
+  const [activeVideo, setActiveVideo] = useState(0);
   const [formData, setFormData] = useState({
     nombre: "",
     empresa: "",
     email: "",
     telefono: "",
-    tipo: "Merchandising Corporativo",
-    cantidad: "100",
-    tamano: "Estándar / Por Definir",
-    colores: "Cuatricromía (Full Color)",
+    tipo: "",
+    cantidad: "",
+    tamano: "",
+    colores: "",
     materiales: "",
-    terminacion: "Polilaminado Mate",
+    terminacion: "",
+    lugarEntrega: "",
+    fechaEntrega: "",
     comentarios: "",
   });
 
@@ -41,8 +44,8 @@ export default function Home() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitted(true);
-    // Armar mensaje directo para WhatsApp
-    const msg = `¡Hola Zack! Quiero cotizar con ImCebra:%0A%0A*Cliente:* ${formData.nombre} (${formData.empresa})%0A*Tipo:* ${formData.tipo}%0A*Cantidad:* ${formData.cantidad}%0A*Tamaño:* ${formData.tamano}%0A*Colores:* ${formData.colores}%0A*Materiales:* ${formData.materiales || "A convenir"}%0A*Terminación:* ${formData.terminacion}%0A*Comentarios:* ${formData.comentarios || "Sin comentarios"}`;
+    // Armar mensaje directo para WhatsApp dirigido a Rayas
+    const msg = `¡Hola Rayas! Quiero cotizar con ImCebra:%0A%0A*Cliente:* ${formData.nombre} (${formData.empresa})%0A*Email:* ${formData.email} | *Tel:* ${formData.telefono}%0A*Tipo de Pieza:* ${formData.tipo}%0A*Cantidad:* ${formData.cantidad}%0A*Medidas:* ${formData.tamano || "Por definir"}%0A*Colores:* ${formData.colores || "Por definir"}%0A*Materiales:* ${formData.materiales || "A convenir"}%0A*Terminaciones:* ${formData.terminacion || "Estándar"}%0A*Lugar de Entrega:* ${formData.lugarEntrega || "Por coordinar"}%0A*Fecha Deseada:* ${formData.fechaEntrega || "A coordinar"}%0A*Detalles:* ${formData.comentarios || "Sin comentarios adicionales"}`;
     window.open(`https://wa.me/56957081096?text=${msg}`, "_blank");
   };
 
@@ -69,7 +72,10 @@ export default function Home() {
               <a href="/catalogo" className="hover:text-white transition">Catálogo Completo</a>
               <a href="#condiciones" className="hover:text-[#00D2FF] transition">6 Condiciones</a>
               <a href="#propuesta" className="hover:text-white transition">La Red</a>
-              <a href="#cotizador" className="hover:text-[#FFE600] transition">Cotizador Zack</a>
+              <a href="#cotizador" className="hover:text-[#FFE600] transition flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#FFE600] animate-pulse" />
+                <span>Cotizador Rayas</span>
+              </a>
               <a href="#contacto" className="hover:text-white transition">Contacto</a>
             </div>
 
@@ -98,7 +104,7 @@ export default function Home() {
               <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight leading-[1.08]">
                 PRODUCCIÓN <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-zinc-200 to-zinc-400">
-                  GRÁFICA INTELIGENTE
+                  GRÁFICA CORPORATIVA
                 </span> <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF007F] via-[#00D2FF] to-[#FFE600]">
                   Y DE ALTO IMPACTO.
@@ -438,33 +444,32 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SECCIÓN ESTILO SAFFRON: BROWSE WORK BY CATEGORY & CASOS INTERACTIVOS */}
+      {/* SECCIÓN ESTILO SAFFRON: LAS 5 LÍNEAS MAESTRAS & CASOS INTERACTIVOS */}
       <section className="py-28 px-6 bg-white text-black">
         <div className="max-w-7xl mx-auto space-y-16">
-          <div className="text-center max-w-3xl mx-auto space-y-6">
+          <div className="text-center max-w-3xl mx-auto space-y-5">
+            <span className="text-[#FF007F] text-xs font-bold uppercase tracking-widest font-mono">
+              Capacidad Integral ImCebra
+            </span>
             <h2 className="text-4xl sm:text-6xl font-black tracking-tight text-neutral-900">
-              Browse work by service
+              LÍNEAS DE PRODUCCIÓN & SERVICIOS
             </h2>
-            <p className="text-neutral-500 text-base font-light">
-              Explora nuestra capacidad instalada por categoría técnica de producción gráfica corporativa.
+            <p className="text-neutral-600 text-sm sm:text-base font-light max-w-2xl mx-auto leading-relaxed">
+              La respuesta definitiva para no tener 5 proveedores distintos. Nuestras **5 líneas maestras** resuelven desde regalos corporativos hasta señalética a gran escala.
             </p>
             
-            {/* PILLS ESTILO SAFFRON */}
-            <div className="flex flex-wrap justify-center gap-3 pt-4">
+            {/* LAS 5 LÍNEAS MAESTRAS EN PILLS DESTACADAS */}
+            <div className="flex flex-wrap justify-center gap-3 pt-3">
               {[
-                "Merchandising Corporativo",
-                "Kits de Onboarding",
-                "Packaging & Cajas",
-                "Papelería Fina & Cuadernos",
-                "Gran Formato & Pendones",
-                "Letreros Volumétricos",
-                "Línea Eco-Friendly",
-                "Textil & Uniformes",
-                "Proyectos a Medida"
+                "1. Merchandising & Regalos Corporativos",
+                "2. Impresos & Papelería Fina",
+                "3. Material POP & Retail",
+                "4. Confección & Textil Técnico",
+                "5. Importaciones Directas & Proyectos a Medida"
               ].map((pill, idx) => (
                 <span
                   key={idx}
-                  className="px-5 py-2.5 rounded-full border border-neutral-300 text-xs sm:text-sm font-medium hover:border-black hover:bg-black hover:text-white transition duration-200 cursor-pointer shadow-sm"
+                  className="px-5 py-2.5 rounded-full border border-neutral-300 text-xs sm:text-sm font-semibold hover:border-black hover:bg-black hover:text-white transition duration-200 cursor-pointer shadow-sm"
                 >
                   {pill}
                 </span>
@@ -472,27 +477,86 @@ export default function Home() {
             </div>
           </div>
 
-          {/* DUAL INTERACTIVE GRID (ESTILO EDITORIAL SAFFRON CON CASOS REALES) */}
+          {/* DUAL INTERACTIVE GRID (ESTILO EDITORIAL SAFFRON CON LOS 3 VIDEOS EN ACCIÓN) */}
           <div className="bg-[#0a0a0c] text-white rounded-3xl p-8 sm:p-14 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            {/* COLUMNA IZQUIERDA: IMAGEN CON TARJETA EDITORIAL */}
-            <div className="lg:col-span-5 relative group">
+            {/* COLUMNA IZQUIERDA: 3 VIDEOS INTERACTIVOS REALES DE PRODUCCIÓN */}
+            <div className="lg:col-span-5 space-y-4">
+              <div className="flex items-center space-x-2 bg-white/5 p-1 rounded-xl border border-white/10">
+                {[
+                  { label: "Tote Bags", tag: "Textil" },
+                  { label: "Mugs 360°", tag: "Regalos" },
+                  { label: "Fachada", tag: "Espacios" }
+                ].map((item, idx) => (
+                  <button
+                    key={idx}
+                    type="button"
+                    onClick={() => setActiveVideo(idx)}
+                    className={`flex-1 py-2 px-2 rounded-lg text-xs font-bold transition flex items-center justify-center space-x-1.5 ${
+                      activeVideo === idx 
+                        ? "bg-[#FF007F] text-white shadow-pink-glow" 
+                        : "text-zinc-400 hover:text-white hover:bg-white/5"
+                    }`}
+                  >
+                    <span>{item.label}</span>
+                  </button>
+                ))}
+              </div>
+
               <div className="relative aspect-[4/5] rounded-2xl overflow-hidden bg-neutral-900 border border-white/10 shadow-2xl">
-                <Image
-                  src="/casos/stickers_derecho_uc_135.jpg"
-                  alt="ImCebra Caso Real Derecho UC"
-                  fill
-                  className="object-cover group-hover:scale-105 transition duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent" />
-                <div className="absolute bottom-6 left-6 right-6 p-4 bg-black/75 backdrop-blur-md rounded-xl border border-white/10">
-                  <span className="text-[10px] uppercase font-mono tracking-widest text-[#FFE600] font-bold">
-                    ■ CASO DESTACADO • PAPELERÍA DE GALA
+                {activeVideo === 0 && (
+                  <video
+                    key="v-coes"
+                    src="/videos/bolsa_coes.mp4"
+                    poster="/videos/bolsa_coes_poster.png"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    className="w-full h-full object-cover"
+                  />
+                )}
+                {activeVideo === 1 && (
+                  <video
+                    key="v-it"
+                    src="/videos/tazon_it.mp4"
+                    poster="/videos/tazon_it_poster.png"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    className="w-full h-full object-cover"
+                  />
+                )}
+                {activeVideo === 2 && (
+                  <video
+                    key="v-fachada"
+                    src="/videos/letrero_exterior.mp4"
+                    poster="/videos/letrero_exterior_poster.png"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    className="w-full h-full object-cover"
+                  />
+                )}
+
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent pointer-events-none" />
+                
+                <div className="absolute bottom-5 left-5 right-5 p-4 bg-black/80 backdrop-blur-md rounded-xl border border-white/15 pointer-events-none">
+                  <span className="text-[10px] uppercase font-mono tracking-widest text-[#00D2FF] font-bold">
+                    {activeVideo === 0 && "■ LÍNEA 04 • CONFECCIÓN & TEXTIL"}
+                    {activeVideo === 1 && "■ LÍNEA 01 • MERCHANDISING CORPORATIVO"}
+                    {activeVideo === 2 && "■ LÍNEA 03 • BRANDING DE ESPACIOS"}
                   </span>
                   <p className="text-sm font-bold text-white mt-1">
-                    Facultad de Derecho UC — 135 Años
+                    {activeVideo === 0 && "COES — Conferencia Internacional"}
+                    {activeVideo === 1 && "IT Chile — Podcast Digitalizando Experiencias"}
+                    {activeVideo === 2 && "Valdivia — Letrero Volumétrico & Fachada"}
                   </p>
                   <p className="text-xs text-neutral-300 font-light mt-0.5 leading-snug">
-                    Impresión sobre sustrato azul perlado con troquel circular de alta precisión y escudo heráldico.
+                    {activeVideo === 0 && "Tote bag de algodón orgánico con serigrafía corporativa nítida."}
+                    {activeVideo === 1 && "Tazón cerámico 360° con fidelidad cromática y resistencia."}
+                    {activeVideo === 2 && "Letrero corpóreo, marquesina y señalética exterior de alta resistencia."}
                   </p>
                 </div>
               </div>
@@ -559,11 +623,18 @@ export default function Home() {
       <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50">
         <a
           href="#cotizador"
-          className="flex items-center space-x-3 bg-black/90 backdrop-blur-xl border border-white/20 text-white px-6 py-3 rounded-full shadow-2xl hover:border-[#FF007F] transition group"
+          className="flex items-center space-x-3 bg-black/90 backdrop-blur-xl border border-white/20 text-white px-5 py-2.5 rounded-full shadow-2xl hover:border-[#FF007F] transition group"
         >
-          <span className="w-2 h-2 rounded-full bg-[#00D2FF] animate-pulse" />
+          <div className="relative w-6 h-6 rounded-full overflow-hidden border border-[#FF007F]">
+            <Image
+              src="/rayas_avatar.png"
+              alt="Rayas"
+              fill
+              className="object-cover"
+            />
+          </div>
           <span className="text-xs sm:text-sm font-semibold tracking-wide">
-            ¿Tienes un proyecto en mente? <span className="text-[#FF007F] group-hover:underline">Cotiza con Zack ↗</span>
+            ¿Tienes un proyecto en mente? <span className="text-[#FF007F] group-hover:underline">Cotiza con Rayas ↗</span>
           </span>
         </a>
       </div>
@@ -629,174 +700,193 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FORMULARIO COTIZADOR BASADO EN LAS 6 CONDICIONES */}
+      {/* FORMULARIO COTIZADOR ADAPTABLE (SIN SESGO DE IMPRENTAS) */}
       <section id="cotizador" className="py-24 px-6 bg-gradient-to-b from-zinc-950 to-black border-t border-white/10">
         <div className="max-w-4xl mx-auto space-y-10">
           <div className="text-center space-y-3">
-            <div className="inline-flex items-center space-x-2 border border-[#00D2FF]/40 bg-[#00D2FF]/10 px-3.5 py-1.5 rounded-full text-xs font-semibold text-[#00D2FF]">
-              <Sparkles className="w-3.5 h-3.5" />
-              <span>Asistente Inteligente de Producción: Zack the Zebra</span>
+            <div className="inline-flex items-center space-x-2.5 border border-[#00D2FF]/40 bg-[#00D2FF]/10 px-4 py-2 rounded-full text-xs font-semibold text-[#00D2FF]">
+              <div className="relative w-5 h-5 rounded-full overflow-hidden border border-[#00D2FF]">
+                <Image
+                  src="/rayas_avatar.png"
+                  alt="Rayas the Zebra"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <span>Asistente de Producción: Rayas the Zebra</span>
             </div>
             <h2 className="text-3xl sm:text-5xl font-black">
-              COTIZA CON ZACK EN VIVO
+              COTIZA TU PROYECTO A MEDIDA
             </h2>
-            <p className="text-zinc-400 text-sm max-w-lg mx-auto">
-              Ingresa los parámetros de tu requerimiento. Zack procesa las 6 condiciones técnicas y te conecta directo a WhatsApp con tu presupuesto pre-armado.
+            <p className="text-zinc-400 text-sm max-w-xl mx-auto font-light">
+              Cuéntale a Rayas lo que necesitas y te responderemos con la mejor opción técnica, precio y tiempos de entrega.
             </p>
           </div>
 
           <form onSubmit={handleSubmit} className="bg-black/80 border border-white/15 rounded-3xl p-8 sm:p-12 space-y-8 backdrop-blur-xl shadow-2xl">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div>
-                <label className="block text-xs font-bold uppercase text-zinc-400 mb-2">Nombre y Apellido</label>
+                <label className="block text-xs font-bold uppercase text-white mb-2">Nombre y Apellido</label>
                 <input
                   type="text"
                   required
-                  placeholder="Tu nombre"
+                  placeholder="Tu nombre completo"
                   value={formData.nombre}
                   onChange={(e) => setFormData({ ...formData, nombre: e.target.value })}
-                  className="w-full bg-zinc-900/80 border border-white/10 rounded-xl px-4 py-3 text-sm focus:border-[#FF007F] focus:outline-none transition"
+                  className="w-full bg-zinc-900 border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-400 focus:border-[#FF007F] focus:outline-none transition"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-bold uppercase text-zinc-400 mb-2">Empresa u Organización</label>
+                <label className="block text-xs font-bold uppercase text-white mb-2">Empresa u Organización</label>
                 <input
                   type="text"
                   required
-                  placeholder="Nombre de tu empresa"
+                  placeholder="Nombre de tu empresa o institución"
                   value={formData.empresa}
                   onChange={(e) => setFormData({ ...formData, empresa: e.target.value })}
-                  className="w-full bg-zinc-900/80 border border-white/10 rounded-xl px-4 py-3 text-sm focus:border-[#FF007F] focus:outline-none transition"
+                  className="w-full bg-zinc-900 border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-400 focus:border-[#FF007F] focus:outline-none transition"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-bold uppercase text-zinc-400 mb-2">Email Corporativo</label>
+                <label className="block text-xs font-bold uppercase text-white mb-2">Email Corporativo</label>
                 <input
                   type="email"
                   required
                   placeholder="contacto@empresa.cl"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full bg-zinc-900/80 border border-white/10 rounded-xl px-4 py-3 text-sm focus:border-[#00D2FF] focus:outline-none transition"
+                  className="w-full bg-zinc-900 border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-400 focus:border-[#00D2FF] focus:outline-none transition"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-bold uppercase text-zinc-400 mb-2">Teléfono / WhatsApp</label>
+                <label className="block text-xs font-bold uppercase text-white mb-2">Teléfono / WhatsApp</label>
                 <input
                   type="tel"
                   required
                   placeholder="+56 9 1234 5678"
                   value={formData.telefono}
                   onChange={(e) => setFormData({ ...formData, telefono: e.target.value })}
-                  className="w-full bg-zinc-900/80 border border-white/10 rounded-xl px-4 py-3 text-sm focus:border-[#00D2FF] focus:outline-none transition"
+                  className="w-full bg-zinc-900 border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-400 focus:border-[#00D2FF] focus:outline-none transition"
                 />
               </div>
             </div>
 
-            {/* LAS 6 CONDICIONES EN EL FORMULARIO */}
+            {/* ESPECIFICACIONES TÉCNICAS */}
             <div className="pt-6 border-t border-white/10 space-y-6">
               <h3 className="text-sm font-bold uppercase tracking-wider text-[#00D2FF]">
-                Parámetros de Fabricación (Las 6 Condiciones)
+                Especificaciones del Requerimiento
               </h3>
 
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                 <div>
-                  <label className="block text-xs font-semibold text-zinc-400 mb-2">1. Tipo de Trabajo</label>
-                  <select
-                    value={formData.tipo}
-                    onChange={(e) => setFormData({ ...formData, tipo: e.target.value })}
-                    className="w-full bg-zinc-900 border border-white/10 rounded-xl px-4 py-3 text-sm focus:border-white focus:outline-none transition"
-                  >
-                    <option>Merchandising Corporativo</option>
-                    <option>Papelería & Cuadernos</option>
-                    <option>Pendones & Gráfica Gran Formato</option>
-                    <option>Letreros & Volumétricos</option>
-                    <option>Bolsas & Packaging</option>
-                    <option>Kit Bienvenida / Onboarding</option>
-                    <option>Proyecto Especial a Medida</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label className="block text-xs font-semibold text-zinc-400 mb-2">2. Cantidad Requerida</label>
+                  <label className="block text-xs font-semibold text-white mb-2">Tipo de Pieza / Producto</label>
                   <input
                     type="text"
-                    placeholder="Ej: 50, 250, 1.000 un."
-                    value={formData.cantidad}
-                    onChange={(e) => setFormData({ ...formData, cantidad: e.target.value })}
-                    className="w-full bg-zinc-900 border border-white/10 rounded-xl px-4 py-3 text-sm focus:border-white focus:outline-none transition"
+                    required
+                    placeholder="Ej: Tote bags, Tazones, Pendones, Cajas packaging, Letrero..."
+                    value={formData.tipo}
+                    onChange={(e) => setFormData({ ...formData, tipo: e.target.value })}
+                    className="w-full bg-zinc-900 border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-400 focus:border-[#FF007F] focus:outline-none transition"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-zinc-400 mb-2">3. Tamaño / Medidas</label>
+                  <label className="block text-xs font-semibold text-white mb-2">Cantidad Requerida</label>
                   <input
                     type="text"
-                    placeholder="Ej: A5, 90x200cm, estándar..."
+                    required
+                    placeholder="Ej: 50, 100, 500, 2.000 unidades..."
+                    value={formData.cantidad}
+                    onChange={(e) => setFormData({ ...formData, cantidad: e.target.value })}
+                    className="w-full bg-zinc-900 border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-400 focus:border-[#FF007F] focus:outline-none transition"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-xs font-semibold text-white mb-2">Medidas / Dimensiones</label>
+                  <input
+                    type="text"
+                    placeholder="Largo x Ancho (y Alto si aplica, ej: 30x40x10 cm)"
                     value={formData.tamano}
                     onChange={(e) => setFormData({ ...formData, tamano: e.target.value })}
-                    className="w-full bg-zinc-900 border border-white/10 rounded-xl px-4 py-3 text-sm focus:border-white focus:outline-none transition"
+                    className="w-full bg-zinc-900 border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-400 focus:border-[#FF007F] focus:outline-none transition"
                   />
                 </div>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                 <div>
-                  <label className="block text-xs font-semibold text-zinc-400 mb-2">4. Colores / Tintas</label>
-                  <select
-                    value={formData.colores}
-                    onChange={(e) => setFormData({ ...formData, colores: e.target.value })}
-                    className="w-full bg-zinc-900 border border-white/10 rounded-xl px-4 py-3 text-sm focus:border-white focus:outline-none transition"
-                  >
-                    <option>Cuatricromía (Full Color)</option>
-                    <option>1 Color (Serigrafía / Tampografía)</option>
-                    <option>2 Colores Directos</option>
-                    <option>Grabado Láser (Sin tinta)</option>
-                    <option>Foil Dorado / Plateado</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label className="block text-xs font-semibold text-zinc-400 mb-2">5. Materiales Preferidos</label>
+                  <label className="block text-xs font-semibold text-white mb-2">Colores / Aplicación Gráfica</label>
                   <input
                     type="text"
-                    placeholder="Ej: Algodón, Kraft, Acrílico, Couché..."
-                    value={formData.materiales}
-                    onChange={(e) => setFormData({ ...formData, materiales: e.target.value })}
-                    className="w-full bg-zinc-900 border border-white/10 rounded-xl px-4 py-3 text-sm focus:border-white focus:outline-none transition"
+                    placeholder="Ej: Full color, 1 color serigrafía, Grabado láser, Bordado..."
+                    value={formData.colores}
+                    onChange={(e) => setFormData({ ...formData, colores: e.target.value })}
+                    className="w-full bg-zinc-900 border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-400 focus:border-[#00D2FF] focus:outline-none transition"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-zinc-400 mb-2">6. Terminación</label>
-                  <select
+                  <label className="block text-xs font-semibold text-white mb-2">Materiales / Sustratos Deseados</label>
+                  <input
+                    type="text"
+                    placeholder="Ej: Algodón orgánico, Acrílico, Cerámica, Vinilo, Madera, Couché..."
+                    value={formData.materiales}
+                    onChange={(e) => setFormData({ ...formData, materiales: e.target.value })}
+                    className="w-full bg-zinc-900 border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-400 focus:border-[#00D2FF] focus:outline-none transition"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-xs font-semibold text-white mb-2">Terminaciones o Acabados</label>
+                  <input
+                    type="text"
+                    placeholder="Ej: Barniz UV, Foil dorado, Ojetillos, Confección con cierre..."
                     value={formData.terminacion}
                     onChange={(e) => setFormData({ ...formData, terminacion: e.target.value })}
-                    className="w-full bg-zinc-900 border border-white/10 rounded-xl px-4 py-3 text-sm focus:border-white focus:outline-none transition"
-                  >
-                    <option>Polilaminado Mate</option>
-                    <option>Polilaminado Brillante</option>
-                    <option>Barniz UV Sectorizado</option>
-                    <option>Troquelado Especial</option>
-                    <option>Ojetillos Metálicos</option>
-                    <option>Estándar sin terminación extra</option>
-                  </select>
+                    className="w-full bg-zinc-900 border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-400 focus:border-[#00D2FF] focus:outline-none transition"
+                  />
+                </div>
+              </div>
+
+              {/* CAMPOS SOLICITADOS SIN NÚMERO */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-2">
+                <div>
+                  <label className="block text-xs font-semibold text-white mb-2">Lugar de Entrega</label>
+                  <input
+                    type="text"
+                    placeholder="Ej: Providencia, Santiago / Despacho a regiones..."
+                    value={formData.lugarEntrega}
+                    onChange={(e) => setFormData({ ...formData, lugarEntrega: e.target.value })}
+                    className="w-full bg-zinc-900 border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-400 focus:border-[#FFE600] focus:outline-none transition"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-xs font-semibold text-white mb-2">Fecha de Entrega Deseada</label>
+                  <input
+                    type="text"
+                    placeholder="Ej: 20 de Noviembre / Urgente para evento..."
+                    value={formData.fechaEntrega}
+                    onChange={(e) => setFormData({ ...formData, fechaEntrega: e.target.value })}
+                    className="w-full bg-zinc-900 border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-400 focus:border-[#FFE600] focus:outline-none transition"
+                  />
                 </div>
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-zinc-400 mb-2">
-                  Detalles Adicionales / Fecha de Entrega Esperada
+                <label className="block text-xs font-semibold text-white mb-2">
+                  Detalles Adicionales & Observaciones
                 </label>
                 <textarea
                   rows={3}
-                  placeholder="Indícanos si tienes fecha límite de evento, si necesitas despacho a regiones o cualquier observación técnica."
+                  placeholder="Indícanos si tienes archivos vectoriales listos (AI, PDF), requerimientos de empaque individual, etc."
                   value={formData.comentarios}
                   onChange={(e) => setFormData({ ...formData, comentarios: e.target.value })}
-                  className="w-full bg-zinc-900 border border-white/10 rounded-xl p-4 text-sm focus:border-[#FFE600] focus:outline-none transition"
+                  className="w-full bg-zinc-900 border border-white/15 rounded-xl p-4 text-sm text-white placeholder-zinc-400 focus:border-[#FFE600] focus:outline-none transition"
                 />
               </div>
             </div>
@@ -805,13 +895,21 @@ export default function Home() {
               type="submit"
               className="w-full bg-gradient-to-r from-[#FF007F] via-[#FF007F] to-[#00D2FF] hover:opacity-95 text-white font-extrabold py-4 px-8 rounded-2xl text-base tracking-wide flex items-center justify-center space-x-3 transition shadow-pink-glow"
             >
-              <span>Enviar Requerimiento a Zack en WhatsApp</span>
-              <Send className="w-5 h-5" />
+              <div className="relative w-6 h-6 rounded-full overflow-hidden border border-white">
+                <Image
+                  src="/rayas_avatar.png"
+                  alt="Rayas"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <span>Enviar Requerimiento a Rayas en WhatsApp</span>
+              <Send className="w-5 h-5 ml-1" />
             </button>
 
             {submitted && (
               <p className="text-center text-xs text-[#00D2FF] font-medium">
-                ✓ Conectando con Zack en WhatsApp con tus 6 condiciones listas...
+                ✓ Conectando con Rayas en WhatsApp con tus especificaciones listas...
               </p>
             )}
           </form>
@@ -849,17 +947,17 @@ export default function Home() {
                 <li><a href="/catalogo" className="hover:text-white transition">Ver Catálogo ↗</a></li>
                 <li><a href="#condiciones" className="hover:text-white transition">6 Condiciones ↗</a></li>
                 <li><a href="#propuesta" className="hover:text-white transition">La Red Industrial ↗</a></li>
-                <li><a href="#cotizador" className="hover:text-white transition">Cotizador Zack ↗</a></li>
+                <li><a href="#cotizador" className="hover:text-white transition">Cotizador Rayas ↗</a></li>
               </ul>
             </div>
 
             <div className="md:col-span-2 space-y-2">
-              <p className="font-mono text-xs uppercase tracking-widest text-[#FF007F]">Hubs Conectados</p>
-              <ul className="space-y-1 text-xs text-neutral-400 font-mono">
-                <li>Santiago de Chile</li>
-                <li>Lima</li>
-                <li>Bogotá</li>
-                <li>Madrid</li>
+              <p className="font-mono text-xs uppercase tracking-widest text-[#FF007F]">Presencia & Alcance</p>
+              <ul className="space-y-1 text-xs text-neutral-300 font-medium">
+                <li>Chile</li>
+                <li>Perú</li>
+                <li>Colombia</li>
+                <li>México</li>
               </ul>
             </div>
           </div>
@@ -879,9 +977,17 @@ export default function Home() {
       <footer id="contacto" className="sticky bottom-0 z-0 bg-[#FFE600] text-black min-h-[60vh] sm:min-h-[75vh] flex flex-col justify-between px-6 sm:px-12 py-10 sm:py-14 overflow-hidden zebra-stripes-yellow select-none">
         <div className="max-w-7xl mx-auto w-full flex items-center justify-between text-xs font-mono font-bold tracking-widest text-neutral-900 border-b border-black/15 pb-4">
           <span>IMCEBRA SPA ✦ GRÁFICA CORPORATIVA</span>
-          <span className="hidden sm:inline">SANTIAGO • LIMA • BOGOTÁ • MADRID</span>
-          <a href="#cotizador" className="hover:underline flex items-center gap-1 text-black font-extrabold">
-            HABLEMOS CON ZACK ↗
+          <span className="hidden sm:inline">CHILE • PERÚ • COLOMBIA • MÉXICO</span>
+          <a href="#cotizador" className="hover:underline flex items-center gap-1.5 text-black font-extrabold">
+            <div className="relative w-5 h-5 rounded-full overflow-hidden border border-black">
+              <Image
+                src="/rayas_avatar.png"
+                alt="Rayas"
+                fill
+                className="object-cover"
+              />
+            </div>
+            <span>HABLEMOS CON RAYAS ↗</span>
           </a>
         </div>
 

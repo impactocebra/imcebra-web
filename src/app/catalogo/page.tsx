@@ -73,7 +73,7 @@ export default function CatalogoPage() {
             href="/#cotizador"
             className="bg-[#FF007F] hover:bg-[#d6006b] text-white font-bold text-xs uppercase px-5 py-2.5 rounded-full transition shadow-pink-glow"
           >
-            Cotizar con Zack
+            Cotizar con Rayas
           </Link>
         </div>
       </nav>
@@ -143,7 +143,7 @@ export default function CatalogoPage() {
                   href={`/#cotizador`}
                   className="w-full bg-white/10 hover:bg-[#FF007F] hover:text-white text-white font-bold text-xs uppercase tracking-wider py-3.5 px-4 rounded-xl flex items-center justify-center space-x-2 transition"
                 >
-                  <span>Cotizar este producto con Zack</span>
+                  <span>Cotizar este producto con Rayas</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
               </div>
