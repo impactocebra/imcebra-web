@@ -47,123 +47,238 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen bg-[#050505] text-white">
-      {/* NAVBAR MINIMALISTA */}
-      <nav className="fixed top-0 left-0 w-full z-50 bg-[#050505]/85 backdrop-blur-md border-b border-white/10 px-6 py-4">
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <Link href="/" className="flex items-center group cursor-pointer">
-            <div className="relative h-12 w-36 sm:h-14 sm:w-44">
-              <Image
-                src="/logo_imcebra_hd.png"
-                alt="ImCebra Gráfica Corporativa"
-                fill
-                className="object-contain group-hover:scale-105 transition duration-300"
-                priority
-              />
-            </div>
-          </Link>
+    <main className="min-h-screen bg-[#050505] text-white relative">
+      {/* CONTENEDOR PRINCIPAL OSCURO (TELÓN ELEVABLE ESTILO SAFFRON) */}
+      <div className="relative z-10 bg-[#050505] shadow-[0_40px_100px_rgba(0,0,0,0.95)]">
+        {/* NAVBAR MINIMALISTA */}
+        <nav className="fixed top-0 left-0 w-full z-50 bg-[#050505]/85 backdrop-blur-md border-b border-white/10 px-6 py-4">
+          <div className="max-w-7xl mx-auto flex items-center justify-between">
+            <Link href="/" className="flex items-center group cursor-pointer">
+              <div className="relative h-12 w-36 sm:h-14 sm:w-44">
+                <Image
+                  src="/logo_imcebra_hd.png"
+                  alt="ImCebra Gráfica Corporativa"
+                  fill
+                  className="object-contain group-hover:scale-105 transition duration-300"
+                  priority
+                />
+              </div>
+            </Link>
 
-          <div className="hidden md:flex items-center space-x-8 text-sm font-medium text-zinc-300">
-            <a href="/catalogo" className="hover:text-white transition">Catálogo Completo</a>
-            <a href="#condiciones" className="hover:text-[#00D2FF] transition">6 Condiciones</a>
-            <a href="#propuesta" className="hover:text-white transition">La Red</a>
-            <a href="#cotizador" className="hover:text-[#FFE600] transition">Cotizador Zack</a>
-            <a href="#contacto" className="hover:text-white transition">Contacto</a>
-          </div>
-
-          <div className="flex items-center space-x-4">
-            <a
-              href="#cotizador"
-              className="bg-[#FF007F] hover:bg-[#d6006b] text-white font-bold text-xs uppercase tracking-wider px-5 py-2.5 rounded-full transition shadow-pink-glow"
-            >
-              Hablemos
-            </a>
-          </div>
-        </div>
-      </nav>
-
-      {/* HERO SECTION */}
-      <section className="relative pt-32 pb-20 px-6 overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#FF007F]/15 via-transparent to-transparent pointer-events-none" />
-        
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          <div className="lg:col-span-7 space-y-6">
-            <div className="inline-flex items-center space-x-2 border border-[#FF007F]/40 bg-[#FF007F]/10 px-3.5 py-1.5 rounded-full text-xs font-semibold text-[#FF007F]">
-              <Sparkles className="w-3.5 h-3.5" />
-              <span>30 años de maestría en producción gráfica corporativa</span>
+            <div className="hidden md:flex items-center space-x-8 text-sm font-medium text-zinc-300">
+              <a href="/catalogo" className="hover:text-white transition">Catálogo Completo</a>
+              <a href="#condiciones" className="hover:text-[#00D2FF] transition">6 Condiciones</a>
+              <a href="#propuesta" className="hover:text-white transition">La Red</a>
+              <a href="#cotizador" className="hover:text-[#FFE600] transition">Cotizador Zack</a>
+              <a href="#contacto" className="hover:text-white transition">Contacto</a>
             </div>
 
-            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight leading-[1.08]">
-              PRODUCCIÓN <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-zinc-200 to-zinc-400">
-                GRÁFICA INTELIGENTE
-              </span> <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF007F] via-[#00D2FF] to-[#FFE600]">
-                Y DE ALTO IMPACTO.
-              </span>
-            </h1>
-
-            <p className="text-lg text-zinc-300 max-w-xl font-light leading-relaxed">
-              De la pantalla a las manos de tu cliente o equipo. Conectamos requerimientos corporativos con la mayor red de fábricas y talleres en Chile, Asia y Europa. Calidad impecable, sin fallas y con control total.
-            </p>
-
-            <div className="flex flex-wrap items-center gap-4 pt-4">
+            <div className="flex items-center space-x-4">
               <a
                 href="#cotizador"
-                className="inline-flex items-center space-x-2 bg-white text-black font-extrabold px-7 py-3.5 rounded-full hover:bg-zinc-200 transition text-sm shadow-lg"
+                className="bg-[#FF007F] hover:bg-[#d6006b] text-white font-bold text-xs uppercase tracking-wider px-5 py-2.5 rounded-full transition shadow-pink-glow"
               >
-                <span>Cotizar Proyecto Ahora</span>
-                <ArrowRight className="w-4 h-4" />
-              </a>
-
-              <a
-                href="https://wa.me/56957081096?text=Hola%20ImCebra,%20necesito%20asesoría%20con%20una%20producción%20gráfica"
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center space-x-2 border border-white/20 bg-white/5 hover:bg-white/10 text-white font-semibold px-6 py-3.5 rounded-full transition text-sm"
-              >
-                <MessageCircle className="w-4 h-4 text-[#00D2FF]" />
-                <span>Atención WhatsApp</span>
+                Hablemos
               </a>
             </div>
+          </div>
+        </nav>
 
-            <div className="grid grid-cols-3 gap-6 pt-8 border-t border-white/10 max-w-lg">
-              <div>
-                <p className="text-2xl font-black text-[#00D2FF]">30+</p>
-                <p className="text-xs text-zinc-400 font-medium">Años de Trayectoria</p>
+        {/* HERO SECTION */}
+        <section className="relative pt-32 pb-20 px-6 overflow-hidden">
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#FF007F]/15 via-transparent to-transparent pointer-events-none" />
+          
+          <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div className="lg:col-span-7 space-y-6">
+              <div className="inline-flex items-center space-x-2 border border-[#FF007F]/40 bg-[#FF007F]/10 px-3.5 py-1.5 rounded-full text-xs font-semibold text-[#FF007F]">
+                <Sparkles className="w-3.5 h-3.5" />
+                <span>30 años de maestría en producción gráfica corporativa</span>
               </div>
-              <div>
-                <p className="text-2xl font-black text-[#FF007F]">6</p>
-                <p className="text-xs text-zinc-400 font-medium">Condiciones Maestras</p>
+
+              <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight leading-[1.08]">
+                PRODUCCIÓN <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-zinc-200 to-zinc-400">
+                  GRÁFICA INTELIGENTE
+                </span> <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF007F] via-[#00D2FF] to-[#FFE600]">
+                  Y DE ALTO IMPACTO.
+                </span>
+              </h1>
+
+              <p className="text-lg text-zinc-300 max-w-xl font-light leading-relaxed">
+                De la pantalla a las manos de tu cliente o equipo. Conectamos requerimientos corporativos con la mayor red de fábricas y talleres en Chile, Asia y Europa. Calidad impecable, sin fallas y con control total.
+              </p>
+
+              <div className="flex flex-wrap items-center gap-4 pt-4">
+                <a
+                  href="#cotizador"
+                  className="inline-flex items-center space-x-2 bg-white text-black font-extrabold px-7 py-3.5 rounded-full hover:bg-zinc-200 transition text-sm shadow-lg"
+                >
+                  <span>Cotizar Proyecto Ahora</span>
+                  <ArrowRight className="w-4 h-4" />
+                </a>
+
+                <a
+                  href="https://wa.me/56957081096?text=Hola%20ImCebra,%20necesito%20asesor%C3%ADa%20con%20una%20producci%C3%B3n%20gr%C3%A1fica"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center space-x-2 border border-white/20 bg-white/5 hover:bg-white/10 text-white font-semibold px-6 py-3.5 rounded-full transition text-sm"
+                >
+                  <MessageCircle className="w-4 h-4 text-[#00D2FF]" />
+                  <span>Atención WhatsApp</span>
+                </a>
               </div>
-              <div>
-                <p className="text-2xl font-black text-[#FFE600]">50%</p>
-                <p className="text-xs text-zinc-400 font-medium">Anticipo Seguro</p>
+
+              <div className="grid grid-cols-3 gap-6 pt-8 border-t border-white/10 max-w-lg">
+                <div>
+                  <p className="text-2xl font-black text-[#00D2FF]">30+</p>
+                  <p className="text-xs text-zinc-400 font-medium">Años de Trayectoria</p>
+                </div>
+                <div>
+                  <p className="text-2xl font-black text-[#FF007F]">6</p>
+                  <p className="text-xs text-zinc-400 font-medium">Condiciones Maestras</p>
+                </div>
+                <div>
+                  <p className="text-2xl font-black text-[#FFE600]">50%</p>
+                  <p className="text-xs text-zinc-400 font-medium">Anticipo Seguro</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="lg:col-span-5 relative">
+              <div className="relative mx-auto w-full max-w-lg rounded-2xl overflow-hidden border border-white/15 bg-zinc-900/40 p-2 shadow-2xl">
+                <Image
+                  src="/cebras_hero.png"
+                  alt="ImCebra Identidad Gráfica y Estratégica"
+                  width={700}
+                  height={500}
+                  className="w-full h-auto object-cover rounded-xl"
+                  priority
+                />
+                <div className="absolute bottom-4 left-4 right-4 bg-black/80 backdrop-blur-md p-3 rounded-xl border border-white/10 flex items-center justify-between">
+                  <div>
+                    <p className="text-xs font-bold text-white uppercase tracking-wider">ImCebra® SpA</p>
+                    <p className="text-[11px] text-zinc-400">Branding & Producción que deja huella</p>
+                  </div>
+                  <span className="h-2 w-2 rounded-full bg-[#00D2FF] animate-pulse" />
+                </div>
               </div>
             </div>
           </div>
+        </section>
 
-          <div className="lg:col-span-5 relative">
-            <div className="relative mx-auto w-full max-w-lg rounded-2xl overflow-hidden border border-white/15 bg-zinc-900/40 p-2 shadow-2xl">
-              <Image
-                src="/cebras_hero.png"
-                alt="ImCebra Identidad Gráfica y Estratégica"
-                width={700}
-                height={500}
-                className="w-full h-auto object-cover rounded-xl"
-                priority
-              />
-              <div className="absolute bottom-4 left-4 right-4 bg-black/80 backdrop-blur-md p-3 rounded-xl border border-white/10 flex items-center justify-between">
-                <div>
-                  <p className="text-xs font-bold text-white uppercase tracking-wider">ImCebra® SpA</p>
-                  <p className="text-[11px] text-zinc-400">Branding & Producción que deja huella</p>
-                </div>
-                <span className="h-2 w-2 rounded-full bg-[#00D2FF] animate-pulse" />
-              </div>
-            </div>
+        {/* KINETIC MARQUEE TICKER (MOVIMIENTO CONTINUO CON RAYAS DE CEBRA) */}
+        <div className="relative w-full overflow-hidden border-y border-white/10 bg-black/70 py-4 backdrop-blur-sm">
+          <div className="animate-marquee whitespace-nowrap flex items-center gap-10 text-xs sm:text-sm font-mono tracking-widest uppercase font-bold text-neutral-300">
+            <span className="flex items-center gap-3">
+              <span className="w-2 h-2 rounded-full bg-[#FF007F]" />
+              <span className="text-white">ImCebra® SpA</span>
+            </span>
+            <span className="text-[#00D2FF]">✦ NUNCA DOS MARCAS IGUALES</span>
+            <span className="text-neutral-400">■ BROKERAGE GRÁFICO INDUSTRIAL</span>
+            <span className="text-[#FFE600]">✦ EFECTO DAZZLE: ALTO CONTRASTE</span>
+            <span className="text-neutral-400">■ MERCHANDISING CORPORATIVO</span>
+            <span className="text-[#FF007F]">✦ RED MAYORISTA 25M+ UNIDADES</span>
+            <span className="text-neutral-400">■ PAPELERÍA FINA & FOIL</span>
+            <span className="text-[#00D2FF]">✦ MATERIAL POP & RETAIL</span>
+            <span className="text-neutral-400">■ IMPORTACIONES DIRECTAS</span>
+            <span className="text-[#FFE600]">✦ 30 AÑOS DE CONTROL TOTAL</span>
+
+            {/* Duplicado para loop infinito fluido */}
+            <span className="flex items-center gap-3">
+              <span className="w-2 h-2 rounded-full bg-[#FF007F]" />
+              <span className="text-white">ImCebra® SpA</span>
+            </span>
+            <span className="text-[#00D2FF]">✦ NUNCA DOS MARCAS IGUALES</span>
+            <span className="text-neutral-400">■ BROKERAGE GRÁFICO INDUSTRIAL</span>
+            <span className="text-[#FFE600]">✦ EFECTO DAZZLE: ALTO CONTRASTE</span>
+            <span className="text-neutral-400">■ MERCHANDISING CORPORATIVO</span>
+            <span className="text-[#FF007F]">✦ RED MAYORISTA 25M+ UNIDADES</span>
+            <span className="text-neutral-400">■ PAPELERÍA FINA & FOIL</span>
+            <span className="text-[#00D2FF]">✦ MATERIAL POP & RETAIL</span>
+            <span className="text-neutral-400">■ IMPORTACIONES DIRECTAS</span>
+            <span className="text-[#FFE600]">✦ 30 AÑOS DE CONTROL TOTAL</span>
           </div>
         </div>
-      </section>
+
+        {/* EL CONCEPTO CEBRA: METÁFORA DE MARCA Y HUELLA SINGULAR */}
+        <section className="py-24 px-6 bg-gradient-to-b from-[#050505] via-[#09090c] to-[#050505] relative overflow-hidden zebra-stripes-pattern">
+          <div className="max-w-7xl mx-auto space-y-16 relative z-10">
+            <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 border-b border-white/10 pb-10">
+              <div className="space-y-3 max-w-2xl">
+                <div className="inline-flex items-center space-x-2 border border-[#FFE600]/40 bg-[#FFE600]/10 px-3.5 py-1.5 rounded-full text-xs font-semibold text-[#FFE600]">
+                  <span>✦ La Genética Visual de ImCebra</span>
+                </div>
+                <h2 className="text-3xl sm:text-5xl font-black tracking-tight leading-tight">
+                  ¿POR QUÉ LA CEBRA? <br />
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FFE600] via-[#00D2FF] to-[#FF007F]">
+                    NUNCA DOS MARCAS IGUALES.
+                  </span>
+                </h2>
+                <p className="text-zinc-300 text-sm sm:text-base font-light leading-relaxed">
+                  En la naturaleza, no existen dos cebras con el mismo patrón de rayas. Cada una posee una huella biológica irrepetible. En el mercado corporativo, tu identidad gráfica es tu ventaja competitiva: tu marca no puede ser una copia genérica.
+                </p>
+              </div>
+
+              <div className="flex items-center space-x-3 text-xs font-mono text-zinc-400 bg-white/5 border border-white/10 px-4 py-2.5 rounded-full">
+                <span className="w-2.5 h-2.5 rounded-full bg-[#00D2FF] animate-pulse" />
+                <span>Singularidad cromática & disrupción visual</span>
+              </div>
+            </div>
+
+            {/* 4 PILARES DEL CONCEPTO CEBRA */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="bg-zinc-950/80 border border-white/10 rounded-2xl p-7 space-y-4 hover:border-[#FF007F]/60 transition group hover:-translate-y-1 duration-300">
+                <div className="w-12 h-12 rounded-xl bg-[#FF007F]/10 border border-[#FF007F]/30 flex items-center justify-center text-[#FF007F] font-bold text-lg font-mono">
+                  01
+                </div>
+                <h3 className="text-lg font-bold text-white group-hover:text-[#FF007F] transition">
+                  La Huella Dactilar
+                </h3>
+                <p className="text-xs text-zinc-400 font-light leading-relaxed">
+                  Cada milímetro de tu packaging, merchandising y papelería respira el ADN auténtico de tu empresa. Cero plantillas genéricas. Identidad exclusiva y a la medida de tu posicionamiento.
+                </p>
+              </div>
+
+              <div className="bg-zinc-950/80 border border-white/10 rounded-2xl p-7 space-y-4 hover:border-[#00D2FF]/60 transition group hover:-translate-y-1 duration-300">
+                <div className="w-12 h-12 rounded-xl bg-[#00D2FF]/10 border border-[#00D2FF]/30 flex items-center justify-center text-[#00D2FF] font-bold text-lg font-mono">
+                  02
+                </div>
+                <h3 className="text-lg font-bold text-white group-hover:text-[#00D2FF] transition">
+                  Efecto Dazzle
+                </h3>
+                <p className="text-xs text-zinc-400 font-light leading-relaxed">
+                  El contraste más puro del reino animal. Diseñado para cortar el ruido de un mercado saturado de opciones iguales y capturar la mirada de tus clientes antes que nadie.
+                </p>
+              </div>
+
+              <div className="bg-zinc-950/80 border border-white/10 rounded-2xl p-7 space-y-4 hover:border-[#FFE600]/60 transition group hover:-translate-y-1 duration-300">
+                <div className="w-12 h-12 rounded-xl bg-[#FFE600]/10 border border-[#FFE600]/30 flex items-center justify-center text-[#FFE600] font-bold text-lg font-mono">
+                  03
+                </div>
+                <h3 className="text-lg font-bold text-white group-hover:text-[#FFE600] transition">
+                  Poder de Manada
+                </h3>
+                <p className="text-xs text-zinc-400 font-light leading-relaxed">
+                  La fuerza de la cebra radica en su coordinación colectiva. Conectamos tu requerimiento con más de 25 fábricas especializadas de Chile, Asia y Europa: volumen, rapidez y cero fallas.
+                </p>
+              </div>
+
+              <div className="bg-zinc-950/80 border border-white/10 rounded-2xl p-7 space-y-4 hover:border-white/40 transition group hover:-translate-y-1 duration-300">
+                <div className="w-12 h-12 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center text-white font-bold text-lg font-mono">
+                  04
+                </div>
+                <h3 className="text-lg font-bold text-white group-hover:text-[#00D2FF] transition">
+                  Disruptivo & Lúdico
+                </h3>
+                <p className="text-xs text-zinc-400 font-light leading-relaxed">
+                  Dejamos atrás las imprentas rígidas y aburridas del pasado. Gráfica corporativa con actitud, carácter contemporáneo y ejecución técnica respaldada por 30 años de experiencia.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
 
       {/* CATÁLOGO DE REFERENCIAS / PROVEEDORES */}
       <section id="catalogo" className="py-20 px-6 bg-zinc-950 border-t border-white/10">
@@ -680,57 +795,89 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FOOTER AMARILLO GIGANTE EXPANSIVO ESTILO SAFFRON */}
-      <footer id="contacto" className="relative bg-[#FFE600] text-black pt-20 pb-16 px-6 overflow-hidden">
-        <div className="max-w-7xl mx-auto space-y-16">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-10 text-sm">
-            <div className="space-y-4 md:col-span-2">
-              <div className="relative h-16 w-52 sm:h-20 sm:w-60">
+      {/* DIRECTORIO CORPORATIVO OSCURO ESTILO SAFFRON (FINAL DEL TELÓN SUPERIOR) */}
+      <section className="pt-20 pb-24 px-6 bg-black border-t border-white/10 relative z-20">
+        <div className="max-w-7xl mx-auto space-y-14">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-10 text-sm">
+            <div className="md:col-span-5 space-y-4">
+              <div className="relative h-14 w-44">
                 <Image
-                  src="/logo_imcebra_negro_completo.png"
+                  src="/logo_imcebra_hd.png"
                   alt="ImCebra Gráfica Corporativa"
                   fill
                   className="object-contain"
                 />
               </div>
-              <p className="max-w-sm text-neutral-800 font-medium leading-relaxed">
-                Comercialización de gráfica corporativa, material POP y proyectos especiales a gran escala en Chile. 30 años conectando marcas con la mejor infraestructura industrial.
+              <p className="max-w-md text-neutral-400 text-xs sm:text-sm font-light leading-relaxed">
+                Comercialización de gráfica corporativa, merchandising, material POP y proyectos especiales a gran escala en Chile. 30 años conectando marcas con la mejor infraestructura industrial.
               </p>
             </div>
 
-            <div className="space-y-2">
-              <p className="font-extrabold uppercase tracking-wider text-xs text-neutral-900">Contacto Directo</p>
-              <p className="font-semibold text-neutral-900">contacto@imcebra.com</p>
-              <p className="font-semibold text-neutral-900">+56 9 5700 0000</p>
-              <p className="text-neutral-700 text-xs">Av. Providencia 1208 OF 1603. Providencia, Santiago</p>
+            <div className="md:col-span-3 space-y-2">
+              <p className="font-mono text-xs uppercase tracking-widest text-[#00D2FF]">Contacto Directo</p>
+              <p className="font-bold text-white text-base">contacto@imcebra.com</p>
+              <p className="text-neutral-300 text-sm font-semibold">+56 9 5700 0000</p>
+              <p className="text-neutral-500 text-xs mt-1">Av. Providencia 1208 OF 1603. Providencia, Santiago</p>
             </div>
 
-            <div className="space-y-2">
-              <p className="font-extrabold uppercase tracking-wider text-xs text-neutral-900">Navegación</p>
-              <ul className="space-y-1 font-semibold text-neutral-900">
-                <li><a href="/catalogo" className="hover:underline">Ver Catálogo de Productos ↗</a></li>
-                <li><a href="#condiciones" className="hover:underline">Las 6 Condiciones ↗</a></li>
-                <li><a href="#cotizador" className="hover:underline">Cotizador con Zack the Zebra ↗</a></li>
+            <div className="md:col-span-2 space-y-2">
+              <p className="font-mono text-xs uppercase tracking-widest text-[#FFE600]">Navegación</p>
+              <ul className="space-y-1.5 text-xs text-neutral-300">
+                <li><a href="/catalogo" className="hover:text-white transition">Ver Catálogo ↗</a></li>
+                <li><a href="#condiciones" className="hover:text-white transition">6 Condiciones ↗</a></li>
+                <li><a href="#propuesta" className="hover:text-white transition">La Red Industrial ↗</a></li>
+                <li><a href="#cotizador" className="hover:text-white transition">Cotizador Zack ↗</a></li>
+              </ul>
+            </div>
+
+            <div className="md:col-span-2 space-y-2">
+              <p className="font-mono text-xs uppercase tracking-widest text-[#FF007F]">Hubs Conectados</p>
+              <ul className="space-y-1 text-xs text-neutral-400 font-mono">
+                <li>Santiago de Chile</li>
+                <li>Lima</li>
+                <li>Bogotá</li>
+                <li>Madrid</li>
               </ul>
             </div>
           </div>
 
-          {/* LOGOTIPO MONUMENTAL DE EXTREMO A EXTREMO ESTILO SAFFRON */}
-          <div className="pt-10 border-t border-black/15 flex flex-col items-center">
-            <div className="relative w-full max-w-6xl aspect-[995/307] hover:opacity-90 transition duration-300">
-              <Image
-                src="/logo_imcebra_negro_monumental.png"
-                alt="ImCebra Gráfica Corporativa"
-                fill
-                className="object-contain"
-                priority
-              />
-            </div>
-            <div className="w-full flex flex-col sm:flex-row items-center justify-between text-xs font-mono font-bold text-neutral-800 pt-6 border-t border-black/10">
-              <span>SANTIAGO DE CHILE • LIMA • BOGOTÁ • MADRID</span>
-              <span className="mt-2 sm:mt-0">© 2026 IMCEBRA SPA. TODOS LOS DERECHOS RESERVADOS.</span>
+          <div className="flex flex-col sm:flex-row items-center justify-between pt-8 border-t border-white/10 text-xs text-neutral-500 font-mono">
+            <span>© 2026 ImCebra SpA. Todos los derechos reservados.</span>
+            <div className="flex items-center space-x-2 text-[#FFE600] mt-3 sm:mt-0 font-sans text-xs">
+              <span className="w-2 h-2 rounded-full bg-[#FFE600] animate-ping" />
+              <span>Desliza para revelar la huella ImCebra ↓</span>
             </div>
           </div>
+        </div>
+      </section>
+      </div>
+
+      {/* FOOTER AMARILLO GIGANTE EXPANSIVO ESTILO SAFFRON (STICKY REVEAL CURTAIN) */}
+      <footer id="contacto" className="sticky bottom-0 z-0 bg-[#FFE600] text-black min-h-[60vh] sm:min-h-[75vh] flex flex-col justify-between px-6 sm:px-12 py-10 sm:py-14 overflow-hidden zebra-stripes-yellow select-none">
+        <div className="max-w-7xl mx-auto w-full flex items-center justify-between text-xs font-mono font-bold tracking-widest text-neutral-900 border-b border-black/15 pb-4">
+          <span>IMCEBRA SPA ✦ GRÁFICA CORPORATIVA</span>
+          <span className="hidden sm:inline">SANTIAGO • LIMA • BOGOTÁ • MADRID</span>
+          <a href="#cotizador" className="hover:underline flex items-center gap-1 text-black font-extrabold">
+            HABLEMOS CON ZACK ↗
+          </a>
+        </div>
+
+        {/* LOGOTIPO MONUMENTAL DE EXTREMO A EXTREMO ESTILO SAFFRON */}
+        <div className="max-w-7xl mx-auto w-full py-8 flex flex-col items-center justify-center">
+          <div className="relative w-full aspect-[995/307] max-w-5xl hover:scale-[1.02] transition duration-500">
+            <Image
+              src="/logo_imcebra_negro_monumental.png"
+              alt="ImCebra Gráfica Corporativa"
+              fill
+              className="object-contain"
+              priority
+            />
+          </div>
+        </div>
+
+        <div className="max-w-7xl mx-auto w-full flex flex-col sm:flex-row items-center justify-between text-xs font-mono font-bold text-neutral-900 border-t border-black/15 pt-4">
+          <span>© 2026 ImCebra SpA. TODOS LOS DERECHOS RESERVADOS.</span>
+          <span className="mt-2 sm:mt-0">IDENTIDAD GRÁFICA QUE DEJA HUELLA.</span>
         </div>
       </footer>
     </main>

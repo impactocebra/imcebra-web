@@ -9,6 +9,10 @@
   --cebra-dark: #0A0A0C;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .font-anton {
   font-family: var(--font-anton), Impact, sans-serif;
 }
@@ -38,3 +42,41 @@ body {
 .shadow-cyan-glow {
   box-shadow: 0 0 25px rgba(0, 210, 255, 0.35);
 }
+
+/* Kinetic Marquee */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 24s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Subtle Zebra Textures */
+.zebra-stripes-pattern {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    rgba(255, 255, 255, 0.035),
+    rgba(255, 255, 255, 0.035) 14px,
+    transparent 14px,
+    transparent 28px
+  );
+}
+
+.zebra-stripes-yellow {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    rgba(0, 0, 0, 0.04),
+    rgba(0, 0, 0, 0.04) 16px,
+    transparent 16px,
+    transparent 32px
+  );
+}
+
