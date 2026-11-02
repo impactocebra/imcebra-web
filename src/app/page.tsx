@@ -92,7 +92,7 @@ export default function Home() {
             <div className="lg:col-span-7 space-y-6">
               <div className="inline-flex items-center space-x-2 border border-[#FF007F]/40 bg-[#FF007F]/10 px-3.5 py-1.5 rounded-full text-xs font-semibold text-[#FF007F]">
                 <Sparkles className="w-3.5 h-3.5" />
-                <span>30 años de maestría en producción gráfica corporativa</span>
+                <span>+30 años de maestría en producción gráfica corporativa</span>
               </div>
 
               <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight leading-[1.08]">
@@ -106,7 +106,7 @@ export default function Home() {
               </h1>
 
               <p className="text-lg text-zinc-300 max-w-xl font-light leading-relaxed">
-                De la pantalla a las manos de tu cliente o equipo. Conectamos requerimientos corporativos con la mayor red de fábricas y talleres en Chile, Asia y Europa. Calidad impecable, sin fallas y con control total.
+                De la pantalla a las manos de tu cliente o equipo. Seleccionamos el taller técnico e importador especializado ideal para cada una de tus piezas: serigrafía, láser, offset, bordado o importación directa. Calidad impecable, sin fallas y con control total.
               </p>
 
               <div className="flex flex-wrap items-center gap-4 pt-4">
@@ -182,7 +182,7 @@ export default function Home() {
             <span className="text-neutral-400">■ PAPELERÍA FINA & FOIL</span>
             <span className="text-[#00D2FF]">✦ MATERIAL POP & RETAIL</span>
             <span className="text-neutral-400">■ IMPORTACIONES DIRECTAS</span>
-            <span className="text-[#FFE600]">✦ 30 AÑOS DE CONTROL TOTAL</span>
+            <span className="text-[#FFE600]">✦ +30 AÑOS DE CONTROL TOTAL</span>
 
             {/* Duplicado para loop infinito fluido */}
             <span className="flex items-center gap-3">
@@ -197,7 +197,7 @@ export default function Home() {
             <span className="text-neutral-400">■ PAPELERÍA FINA & FOIL</span>
             <span className="text-[#00D2FF]">✦ MATERIAL POP & RETAIL</span>
             <span className="text-neutral-400">■ IMPORTACIONES DIRECTAS</span>
-            <span className="text-[#FFE600]">✦ 30 AÑOS DE CONTROL TOTAL</span>
+            <span className="text-[#FFE600]">✦ +30 AÑOS DE CONTROL TOTAL</span>
           </div>
         </div>
 
@@ -245,10 +245,10 @@ export default function Home() {
                   02
                 </div>
                 <h3 className="text-lg font-bold text-white group-hover:text-[#00D2FF] transition">
-                  Efecto Dazzle
+                  Alto Contraste (Efecto Dazzle)
                 </h3>
                 <p className="text-xs text-zinc-400 font-light leading-relaxed">
-                  El contraste más puro del reino animal. Diseñado para cortar el ruido de un mercado saturado de opciones iguales y capturar la mirada de tus clientes antes que nadie.
+                  Inspirado en el contraste óptico de las cebras: rompe la monotonía visual y corta el ruido de un mercado saturado de opciones iguales. Tu marca salta a la vista y se vuelve inolvidable.
                 </p>
               </div>
 
@@ -257,10 +257,10 @@ export default function Home() {
                   03
                 </div>
                 <h3 className="text-lg font-bold text-white group-hover:text-[#FFE600] transition">
-                  Poder de Manada
+                  Alianzas & Brokerage Técnico
                 </h3>
                 <p className="text-xs text-zinc-400 font-light leading-relaxed">
-                  La fuerza de la cebra radica en su coordinación colectiva. Conectamos tu requerimiento con más de 25 fábricas especializadas de Chile, Asia y Europa: volumen, rapidez y cero fallas.
+                  No nos casamos con una máquina parada: seleccionamos el taller o importador que mejor domina cada técnica concreta. Cero costos inflados, precios justos y supervisión técnica en cada tiraje.
                 </p>
               </div>
 
@@ -272,7 +272,7 @@ export default function Home() {
                   Disruptivo & Lúdico
                 </h3>
                 <p className="text-xs text-zinc-400 font-light leading-relaxed">
-                  Dejamos atrás las imprentas rígidas y aburridas del pasado. Gráfica corporativa con actitud, carácter contemporáneo y ejecución técnica respaldada por 30 años de experiencia.
+                  Dejamos atrás las imprentas rígidas y aburridas del pasado. Gráfica corporativa con actitud, carácter contemporáneo y ejecución técnica respaldada por +30 años de experiencia.
                 </p>
               </div>
             </div>
