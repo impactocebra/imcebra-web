@@ -472,82 +472,82 @@ export default function Home() {
             </div>
           </div>
 
-          {/* DUAL INTERACTIVE GRID (ESTILO EDITORIAL SAFFRON CON ZARA / CASOS) */}
+          {/* DUAL INTERACTIVE GRID (ESTILO EDITORIAL SAFFRON CON CASOS REALES) */}
           <div className="bg-[#0a0a0c] text-white rounded-3xl p-8 sm:p-14 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* COLUMNA IZQUIERDA: IMAGEN CON TARJETA EDITORIAL */}
             <div className="lg:col-span-5 relative group">
               <div className="relative aspect-[4/5] rounded-2xl overflow-hidden bg-neutral-900 border border-white/10 shadow-2xl">
                 <Image
-                  src="/cebras_hero.png"
-                  alt="ImCebra Producción de Vanguardia"
+                  src="/casos/stickers_derecho_uc_135.jpg"
+                  alt="ImCebra Caso Real Derecho UC"
                   fill
                   className="object-cover group-hover:scale-105 transition duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
-                <div className="absolute bottom-6 left-6 right-6 p-4 bg-black/60 backdrop-blur-md rounded-xl border border-white/10">
-                  <span className="text-[10px] uppercase font-mono tracking-widest text-[#FF007F]">
-                    ■ CASE STUDY #01
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent" />
+                <div className="absolute bottom-6 left-6 right-6 p-4 bg-black/75 backdrop-blur-md rounded-xl border border-white/10">
+                  <span className="text-[10px] uppercase font-mono tracking-widest text-[#FFE600] font-bold">
+                    ■ CASO DESTACADO • PAPELERÍA DE GALA
                   </span>
                   <p className="text-sm font-bold text-white mt-1">
-                    Universidad Católica — Kits de Bienvenida Masivos
+                    Facultad de Derecho UC — 135 Años
                   </p>
-                  <p className="text-xs text-neutral-400 font-light mt-0.5">
-                    Demanda agrupada, bolsas de algodón orgánico y libretas foil.
+                  <p className="text-xs text-neutral-300 font-light mt-0.5 leading-snug">
+                    Impresión sobre sustrato azul perlado con troquel circular de alta precisión y escudo heráldico.
                   </p>
                 </div>
               </div>
             </div>
 
             {/* COLUMNA DERECHA: LISTA EDITORIAL CON FLECHAS CIRCULARES */}
-            <div className="lg:col-span-7 space-y-8 divide-y divide-white/10">
+            <div className="lg:col-span-7 space-y-6 divide-y divide-white/10">
               <div className="pt-2 group cursor-pointer">
                 <div className="flex items-center justify-between">
                   <span className="text-[11px] font-mono uppercase tracking-widest text-neutral-400">
-                    ■ MERCHANDISING | IMPORTACIÓN DIRECTA
+                    ■ RETAIL & TECH | PRODUCCIÓN EN SERIE
                   </span>
-                  <div className="w-10 h-10 rounded-full bg-white/5 border border-white/15 flex items-center justify-center group-hover:bg-white group-hover:text-black transition">
+                  <div className="w-9 h-9 rounded-full bg-white/5 border border-white/15 flex items-center justify-center group-hover:bg-white group-hover:text-black transition">
                     <ArrowRight className="w-4 h-4 transform -rotate-45 group-hover:rotate-0 transition duration-300" />
                   </div>
                 </div>
-                <h3 className="text-2xl sm:text-4xl font-extrabold tracking-tight mt-2 text-white group-hover:text-[#00D2FF] transition">
-                  KITS CORPORATIVOS DE ALTA ESCALA
+                <h3 className="text-xl sm:text-3xl font-extrabold tracking-tight mt-1.5 text-white group-hover:text-[#00D2FF] transition">
+                  ADHESIVOS TROQUELADOS RIPLEY TECH_
                 </h3>
-                <p className="text-sm text-neutral-400 font-light mt-1 max-w-xl">
-                  Fabricación masiva de botellas térmicas doble pared, libretas de cuero ecológico y estuches personalizados.
+                <p className="text-xs sm:text-sm text-neutral-400 font-light mt-1 max-w-xl">
+                  Tiraje masivo de vinilo adhesivo troquelado a registro con tres variantes cromáticas para gran retail tecnológico.
                 </p>
               </div>
 
-              <div className="pt-8 group cursor-pointer">
+              <div className="pt-6 group cursor-pointer">
                 <div className="flex items-center justify-between">
                   <span className="text-[11px] font-mono uppercase tracking-widest text-neutral-400">
-                    ■ RETAIL & ESPACIOS | PROYECTOS A MEDIDA
+                    ■ ESPACIOS & FACHADAS | LETREROS CORPÓREOS
                   </span>
-                  <div className="w-10 h-10 rounded-full bg-white/5 border border-white/15 flex items-center justify-center group-hover:bg-white group-hover:text-black transition">
+                  <div className="w-9 h-9 rounded-full bg-white/5 border border-white/15 flex items-center justify-center group-hover:bg-white group-hover:text-black transition">
                     <ArrowRight className="w-4 h-4 transform -rotate-45 group-hover:rotate-0 transition duration-300" />
                   </div>
                 </div>
-                <h3 className="text-2xl sm:text-4xl font-extrabold tracking-tight mt-2 text-white group-hover:text-[#FF007F] transition">
-                  LETREROS VOLUMÉTRICOS & BRANDING AMBIENTAL
+                <h3 className="text-xl sm:text-3xl font-extrabold tracking-tight mt-1.5 text-white group-hover:text-[#FF007F] transition">
+                  LETREROS CON HALO LED (DI TORLASCHI)
                 </h3>
-                <p className="text-sm text-neutral-400 font-light mt-1 max-w-xl">
-                  Letreros retroiluminados, acrílicos con corte láser milimétrico y cuadros en gran formato para salas de directorio.
+                <p className="text-xs sm:text-sm text-neutral-400 font-light mt-1 max-w-xl">
+                  Relieve volumétrico acrílico 3D con retroiluminación LED cálida, marquesinas y señalética comercial para retail y gastronomía.
                 </p>
               </div>
 
-              <div className="pt-8 group cursor-pointer">
+              <div className="pt-6 group cursor-pointer">
                 <div className="flex items-center justify-between">
                   <span className="text-[11px] font-mono uppercase tracking-widest text-neutral-400">
-                    ■ PAPELERÍA DE LUJO | 6 CONDICIONES TÉCNICAS
+                    ■ ACTIVACIONES & FERIAS | MATERIAL POP
                   </span>
-                  <div className="w-10 h-10 rounded-full bg-white/5 border border-white/15 flex items-center justify-center group-hover:bg-white group-hover:text-black transition">
+                  <div className="w-9 h-9 rounded-full bg-white/5 border border-white/15 flex items-center justify-center group-hover:bg-white group-hover:text-black transition">
                     <ArrowRight className="w-4 h-4 transform -rotate-45 group-hover:rotate-0 transition duration-300" />
                   </div>
                 </div>
-                <h3 className="text-2xl sm:text-4xl font-extrabold tracking-tight mt-2 text-white group-hover:text-[#FFE600] transition">
-                  PAPELERÍA FINAS CON BARNIZ UV & FOIL
+                <h3 className="text-xl sm:text-3xl font-extrabold tracking-tight mt-1.5 text-white group-hover:text-[#FFE600] transition">
+                  RULETAS INTERACTIVAS EN SERIE
                 </h3>
-                <p className="text-sm text-neutral-400 font-light mt-1 max-w-xl">
-                  Tarjetería en cuatricromía sobre couché 350g, polilaminado mate seda y cuños secos de altísima fidelidad.
+                <p className="text-xs sm:text-sm text-neutral-400 font-light mt-1 max-w-xl">
+                  Corte láser en acrílico, serigrafía multicolor y ensamblado masivo para campañas públicas y activaciones de marca.
                 </p>
               </div>
             </div>
