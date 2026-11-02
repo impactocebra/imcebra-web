@@ -178,7 +178,7 @@ export default function Home() {
             <span className="text-neutral-400">■ BROKERAGE GRÁFICO INDUSTRIAL</span>
             <span className="text-[#FFE600]">✦ EFECTO DAZZLE: ALTO CONTRASTE</span>
             <span className="text-neutral-400">■ MERCHANDISING CORPORATIVO</span>
-            <span className="text-[#FF007F]">✦ RED MAYORISTA 25M+ UNIDADES</span>
+            <span className="text-[#FF007F]">✦ MERCHANDISING & REGALOS CORPORATIVOS</span>
             <span className="text-neutral-400">■ PAPELERÍA FINA & FOIL</span>
             <span className="text-[#00D2FF]">✦ MATERIAL POP & RETAIL</span>
             <span className="text-neutral-400">■ IMPORTACIONES DIRECTAS</span>
@@ -193,7 +193,7 @@ export default function Home() {
             <span className="text-neutral-400">■ BROKERAGE GRÁFICO INDUSTRIAL</span>
             <span className="text-[#FFE600]">✦ EFECTO DAZZLE: ALTO CONTRASTE</span>
             <span className="text-neutral-400">■ MERCHANDISING CORPORATIVO</span>
-            <span className="text-[#FF007F]">✦ RED MAYORISTA 25M+ UNIDADES</span>
+            <span className="text-[#FF007F]">✦ MERCHANDISING & REGALOS CORPORATIVOS</span>
             <span className="text-neutral-400">■ PAPELERÍA FINA & FOIL</span>
             <span className="text-[#00D2FF]">✦ MATERIAL POP & RETAIL</span>
             <span className="text-neutral-400">■ IMPORTACIONES DIRECTAS</span>
@@ -280,19 +280,19 @@ export default function Home() {
         </section>
 
 
-      {/* CATÁLOGO DE REFERENCIAS / PROVEEDORES */}
+      {/* TRABAJOS REALIZADOS & LÍNEAS DE PRODUCCIÓN */}
       <section id="catalogo" className="py-20 px-6 bg-zinc-950 border-t border-white/10">
-        <div className="max-w-7xl mx-auto space-y-12">
+        <div className="max-w-6xl mx-auto space-y-10">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
             <div>
               <span className="text-[#FFE600] text-xs font-bold uppercase tracking-widest">
-                Red Mayorista & Alianzas Industriales
+                Casos en Acción & Producción Real
               </span>
-              <h2 className="text-3xl sm:text-4xl font-black mt-2">
-                LÍNEA DE PRODUCTOS DISPONIBLES
+              <h2 className="text-2xl sm:text-4xl font-black mt-2">
+                TRABAJOS REALIZADOS & LÍNEAS DE PRODUCCIÓN
               </h2>
-              <p className="text-zinc-400 text-sm mt-1 max-w-xl">
-                Acceso a más de 25 millones de unidades bodegadas en Chile a través de los mayores importadores y fábricas asociadas.
+              <p className="text-zinc-400 text-xs sm:text-sm mt-1 max-w-xl font-light">
+                Merchandising corporativo, gráfica para eventos, piezas textiles y letreros comerciales. Cada entrega supervisada técnicamente para garantizar fidelidad cromática y terminaciones de primer nivel.
               </p>
             </div>
             <a
@@ -304,62 +304,85 @@ export default function Home() {
             </a>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {[
               {
-                nombre: "Botellas Térmicas & Mugs",
-                desc: "Acero inoxidable doble pared, grabado láser o serigrafía full color.",
-                img: "/catalogo/botella_termica.jpg",
-                tag: "Bebidas & Térmicos"
+                nombre: "Tote Bags Algodón Serigrafiado",
+                cliente: "COES • Conferencia Internacional",
+                desc: "Algodón orgánico natural con serigrafía de alta definición a color corporativo.",
+                video: "/videos/bolsa_coes.mp4",
+                poster: "/videos/bolsa_coes_poster.png",
+                tag: "Merchandising Textil"
               },
               {
-                nombre: "Libretas & Cuadernos Corporativos",
-                desc: "Tapas duras ecológicas, hojas recicladas, cinta separadora y elástico.",
-                img: "/catalogo/libreta_corporativa.jpg",
-                tag: "Escritorio & Oficina"
+                nombre: "Mugs Cerámicos 360° Full Color",
+                cliente: "IT Chile • Podcast Oficial",
+                desc: "Impresión cerámica envolvente de alta durabilidad y resistencia al lavado.",
+                video: "/videos/tazon_it.mp4",
+                poster: "/videos/tazon_it_poster.png",
+                tag: "Regalos & Lanzamientos"
               },
               {
-                nombre: "Bolsas de Algodón & Tote Bags",
-                desc: "Algodón 100% natural, asas reforzadas, impresión serigráfica de alto contraste.",
-                img: "/catalogo/bolsa_algodon.jpg",
-                tag: "Línea Ecológica"
+                nombre: "Letreros Volumétricos & Fachada",
+                cliente: "Trattoria & Espacio Comercial",
+                desc: "Corte corpóreo, marquesinas textiles y señalética exterior resistente al clima.",
+                video: "/videos/letrero_exterior.mp4",
+                poster: "/videos/letrero_exterior_poster.png",
+                tag: "Branding de Espacios"
               },
               {
-                nombre: "Bolígrafos & Lápices Ejecutivos",
-                desc: "Cuerpo metálico, clip cromado, terminación mate y grabado de precisión.",
-                img: "/catalogo/lapiz_ejecutivo.jpg",
-                tag: "Escritura Fina"
+                nombre: "Pendones Roller Dobles de Alta Gama",
+                cliente: "iamtheCODE • Women in AI",
+                desc: "Estructuras de aluminio reforzado con lona fotográfica mate anti-curvatura.",
+                img: "/casos/rollups_iamthecode.jpg",
+                tag: "Eventos & Seminarios"
               }
             ].map((prod, idx) => (
               <div 
                 key={idx}
-                className="bg-black/70 border border-white/10 rounded-2xl overflow-hidden hover:border-[#00D2FF]/60 transition group flex flex-col"
+                className="bg-black/80 border border-white/10 rounded-2xl overflow-hidden hover:border-[#00D2FF]/60 transition group flex flex-col"
               >
-                <div className="relative aspect-square w-full bg-zinc-900 overflow-hidden">
-                  <Image
-                    src={prod.img}
-                    alt={prod.nombre}
-                    fill
-                    className="object-cover group-hover:scale-105 transition duration-500"
-                  />
-                  <span className="absolute top-3 left-3 bg-black/80 backdrop-blur-md text-[10px] font-bold text-[#00D2FF] uppercase tracking-wider px-2.5 py-1 rounded-full border border-white/10">
+                <div className="relative h-60 w-full bg-zinc-950 overflow-hidden flex items-center justify-center">
+                  {prod.video ? (
+                    <video
+                      src={prod.video}
+                      poster={prod.poster}
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                    />
+                  ) : (
+                    <Image
+                      src={prod.img!}
+                      alt={prod.nombre}
+                      fill
+                      className="object-cover group-hover:scale-105 transition duration-500"
+                    />
+                  )}
+                  <span className="absolute top-3 left-3 bg-black/85 backdrop-blur-md text-[10px] font-bold text-[#00D2FF] uppercase tracking-wider px-2.5 py-1 rounded-full border border-white/10">
                     {prod.tag}
                   </span>
                 </div>
-                <div className="p-5 flex-1 flex flex-col justify-between space-y-2">
+
+                <div className="p-4 flex-1 flex flex-col justify-between space-y-2">
                   <div>
-                    <h3 className="font-bold text-base text-white group-hover:text-[#FFE600] transition">
+                    <span className="text-[10px] font-mono uppercase tracking-wider text-[#FF007F] font-semibold block">
+                      {prod.cliente}
+                    </span>
+                    <h3 className="font-bold text-sm text-white group-hover:text-[#FFE600] transition mt-0.5">
                       {prod.nombre}
                     </h3>
-                    <p className="text-xs text-zinc-400 font-light mt-1">
+                    <p className="text-[11px] text-zinc-400 font-light mt-1 leading-snug">
                       {prod.desc}
                     </p>
                   </div>
                   <a
                     href="#cotizador"
-                    className="pt-2 text-xs font-semibold text-[#FF007F] inline-flex items-center space-x-1 group-hover:underline"
+                    className="pt-2 text-[11px] font-semibold text-[#00D2FF] inline-flex items-center space-x-1 group-hover:underline"
                   >
-                    <span>Cotizar en ImCebra</span>
+                    <span>Cotizar similar</span>
                     <ArrowRight className="w-3 h-3" />
                   </a>
                 </div>
@@ -562,7 +585,7 @@ export default function Home() {
             <ul className="space-y-3 text-sm text-zinc-300">
               <li className="flex items-center space-x-3">
                 <CheckCircle2 className="w-5 h-5 text-[#00D2FF]" />
-                <span>Acceso directo a importadores mayoristas de más de 25M de unidades</span>
+                <span>Alianzas con importadores y talleres técnicos especializados</span>
               </li>
               <li className="flex items-center space-x-3">
                 <CheckCircle2 className="w-5 h-5 text-[#FF007F]" />

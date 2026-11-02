@@ -3,8 +3,8 @@ import Link from "next/link";
 import { ArrowLeft, ArrowRight, Sparkles, Filter, CheckCircle2 } from "lucide-react";
 
 export const metadata = {
-  title: "Catálogo de Productos & Líneas Mayoristas | ImCebra SpA",
-  description: "Explora más de 1.000 referencias disponibles para producción gráfica y merchandising corporativo a gran escala en Chile.",
+  title: "Catálogo de Líneas de Producción & Merchandising | ImCebra SpA",
+  description: "Explora referencias disponibles para producción gráfica y merchandising corporativo de alto impacto en Chile.",
 };
 
 export default function CatalogoPage() {
@@ -82,15 +82,15 @@ export default function CatalogoPage() {
       <section className="py-20 px-6 max-w-7xl mx-auto space-y-6">
         <div className="inline-flex items-center space-x-2 border border-[#00D2FF]/40 bg-[#00D2FF]/10 px-3.5 py-1.5 rounded-full text-xs font-semibold text-[#00D2FF]">
           <Sparkles className="w-3.5 h-3.5" />
-          <span>Alianzas con los mayores importadores y bodegas de Chile</span>
+          <span>Supervisión técnica directa en cada etapa de producción</span>
         </div>
 
         <h1 className="text-4xl sm:text-6xl font-black tracking-tight">
-          LÍNEA DE PRODUCTOS & REFERENCIAS MAYORISTAS
+          LÍNEA DE PRODUCTOS & REFERENCIAS CORPORATIVAS
         </h1>
 
         <p className="text-zinc-400 text-base max-w-2xl font-light leading-relaxed">
-          Acceso inmediato a stock nacional consolidado. Selecciona una referencia y cotiízala con las 6 condiciones técnicas (Tipo, Cantidad, Tamaño, Colores, Material y Acabado).
+          Disponibilidad inmediata para personalización y tirajes corporativos. Selecciona una referencia y cotízala con las 6 condiciones técnicas (Tipo, Cantidad, Tamaño, Colores, Material y Acabado).
         </p>
       </section>
 
