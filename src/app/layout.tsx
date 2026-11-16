@@ -12,7 +12,13 @@ export const metadata: Metadata = {
   title: "ImCebra SpA | Producción Gráfica Inteligente y de Alto Impacto",
   description: "Comercialización y gestión de producción gráfica corporativa, material POP, merchandising y soluciones a medida en Chile.",
   icons: {
-    icon: "/logo_imcebra_hd.png",
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/icon.png", type: "image/png" },
+    ],
+    apple: [
+      { url: "/apple-icon.png" },
+    ],
   },
 };
 
